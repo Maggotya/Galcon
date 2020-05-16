@@ -90,6 +90,13 @@ namespace Galcon.Level.Population
         }
         #endregion // EVENTS_HANDLING
 
+        #region MONO_BEHAVIOUR
+
+        private void Update()
+            =>_timer.Update(Time.deltaTime);
+
+        #endregion // MONO_BEHAVIOUR
+
         ///////////////////////////////////////////////////////////
 
         /// <returns>Остатки непринятых оппонентов</returns>
