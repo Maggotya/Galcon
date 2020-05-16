@@ -35,16 +35,7 @@ namespace Galcon.Level.Population.Model
         public void Decrease(int count)
             => Set(_count - count);
 
-        public void Reset()
-        {
-            _count = _MIN_VALUE;
-            onBecomeZero?.Invoke();
-            _onChanged?.Invoke(_count);
-        }
-
-        /////////////////////////////////////
-
-        private void Set(int count)
+        public void Set(int count)
         {
             count = Mathf.Max(_MIN_VALUE, count);
 
@@ -58,6 +49,13 @@ namespace Galcon.Level.Population.Model
                 onBecomeZero?.Invoke();
 
             _count = count;
+            _onChanged?.Invoke(_count);
+        }
+
+        public void Reset()
+        {
+            _count = _MIN_VALUE;
+            onBecomeZero?.Invoke();
             _onChanged?.Invoke(_count);
         }
     }

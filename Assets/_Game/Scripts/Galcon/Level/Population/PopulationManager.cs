@@ -21,6 +21,8 @@ namespace Galcon.Level.Population
         private int _populationPerInterval;
         private float _proportionToEvict;
 
+        public int population => _model.count;
+
         public UnityEvent onPopulationExterminated {
             get => _OnPopulationExterminated;
             set => _OnPopulationExterminated = value; 
@@ -90,16 +92,23 @@ namespace Galcon.Level.Population
 
         ///////////////////////////////////////////////////////////
 
-        public void AcceptOpponents(int population)
+        /// <returns>Остатки непринятых оппонентов</returns>
+        public int AcceptOpponents(int population)
         {
-            _model.Decrease(population);
-            Logging.Log(_source, $"Accept {population} opponents");
+            var acceptedPopulation = Mathf.Min(_model.count, population);
+            _model.Decrease(acceptedPopulation);
+
+            Logging.Log(_source, $"Accept {acceptedPopulation} opponents");
+            return population - acceptedPopulation;
         }
 
-        public void AcceptAllies(int population)
+        /// <returns>Остатки непринятых союзников</returns>
+        public int AcceptAllies(int population)
         {
             _model.Increase(population);
             Logging.Log(_source, $"Accept {population} allies");
+
+            return population - population;
         }
 
         public int EvictPopulationForShips()
@@ -111,10 +120,10 @@ namespace Galcon.Level.Population
             return population;
         }
 
-        public void Clear()
+        public void SetPopulation(int population)
         {
-            _model.Reset();
-            Logging.Log(_source, "Clear");
+            _model.Set(population);
+            Logging.Log(_source, $"Set population {population}");
         }
     }
 }

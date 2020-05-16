@@ -52,14 +52,19 @@ namespace Galcon.Level.Planets
             owner.onTagChanged.AddListener(OnOwnerChanged);
 
             _populationManager = populationManager;
+            _populationManager.onPopulationExterminated.AddListener(ClearOwner);
         }
 
         private void OnOwnerChanged(string owner)
             => SetColor(_ownersParameters
                 .GetConfig(owner).ownerColor);
 
+        private void ClearOwner()
+            => owner.ClearTag();
+
         /////////////////////////////////////////////////////
 
+        #region SETTERS
         public void SetRadius(float radius)
         {
             _model.radius = radius;
@@ -84,10 +89,10 @@ namespace Galcon.Level.Planets
 
         public void SetPopulation(int population)
         {
-            _populationManager.Clear();
-            _populationManager.AcceptAllies(population);
-            Logging.Log(_source, $"Set population in {population}");
+            _populationManager.SetPopulation(population);
+            Logging.Log(_source, $"Set population {population}");
         }
+        #endregion // SETTERS
 
         /////////////////////////////////////////////////////
 
@@ -107,11 +112,14 @@ namespace Galcon.Level.Planets
 
         /////////////////////////////////////////////////////
 
+        #region LOCATION
         public bool Contains(Vector2 point)
             => circle.Contains(point);
         public float DistanceFromBorder(Vector2 point)
             => circle.DistanceFromBorder(point);
         public float DistanceFromCenter(Vector2 point)
             => circle.DistanceFromCenter(point);
+
+        #endregion // LOCATION
     }
 }

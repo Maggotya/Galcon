@@ -5,13 +5,14 @@ namespace Galcon.Level.Population
 {
     interface IPopulationManager
     {
+        int population { get; }
         UnityEvent onPopulationExterminated { get; set; }
         UnityEvent onEmergenceOfPopulation { get; set; }
         IntUnityEvent onPopulationIncreased { get; set; }
 
-        void AcceptOpponents(int population);
-        void AcceptAllies(int population);
+        int AcceptOpponents(int population);
+        int AcceptAllies(int population);
         int EvictPopulationForShips();
-        void Clear();
+        void SetPopulation(int population);
     }
 }

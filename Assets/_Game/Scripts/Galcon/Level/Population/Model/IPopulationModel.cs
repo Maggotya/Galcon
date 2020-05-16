@@ -10,6 +10,7 @@ namespace Galcon.Level.Population.Model
         Action onBecomePositive { get; set; }
         Action onBecomeZero { get; set; }
 
+        void Set(int count);
         void Increase(int count);
         void Decrease(int count);
     }
