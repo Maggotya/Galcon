@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d08e30a388753941b5a88380c269bcc, type: 3}
+  m_Name: PlanetsGeneratorParameters
+  m_EditorClassIdentifier: 
+  _PlanetPrefab: {fileID: 1098089566892603200, guid: 3d76bc475bcde54408d94dc80b0c7a47,
+    type: 3}
+  _MinPlanetRadius: 0.7
+  _MaxPlanetRadius: 2
+  _MinDistanceBetweenPlanetsBorders: 0.4
+  _MinPlanetsCount: 10
+  _MaxPlanetsCount: 15
+  _PossibleSprites:
+  - {fileID: 21300000, guid: 769c110bc070f7c44ad7015f19c78307, type: 3}
+  - {fileID: 21300000, guid: 5d766fc45f57a164fbb12427207013f8, type: 3}
+  - {fileID: 21300000, guid: 6044eed113bbcea41bdddc8d16fc9aaa, type: 3}

@@ -6,6 +6,7 @@ using Galcon.Level.Planets.Model;
 using Galcon.Level.Planets.View;
 using Galcon.Level.PlayerManagement.Ownership;
 using Galcon.Level.Population;
+using Galcon.Level.Shipping;
 using Galcon.Level.Shipping.Manager;
 using UnityEngine;
 using Zenject;
@@ -42,6 +43,8 @@ namespace Galcon.Level.Planets
         {
             _view = view;
             _model = model;
+            _shipsManager = shipsManager;
+            _circle = new Circle();
             _selectableObject = selectableObject;
 
             owner = planetOwner;
@@ -92,6 +95,14 @@ namespace Galcon.Level.Planets
         {
             var populationToSend = _populationManager.EvictPopulationForShips();
             _shipsManager.LaunchShips(owner.ownerTag, _model.color, populationToSend, targetPlanet);
+        }
+
+        public void AcceptShip(IShip ship)
+        {
+            if (owner.IsOwner(ship.owner))
+                _populationManager.AcceptAllies(ship.population);
+            else
+                _populationManager.AcceptOpponents(ship.population);
         }
 
         /////////////////////////////////////////////////////

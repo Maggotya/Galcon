@@ -2,7 +2,6 @@
 using Galcon.Level.Planets.Creation;
 using Galcon.Level.Planets.Creation.Generator;
 using Galcon.Level.Planets.Creation.Parameters;
-using Galcon.Level.Planets.Manager;
 using Galcon.Level.ScreenView;
 using UnityEngine;
 using Zenject;

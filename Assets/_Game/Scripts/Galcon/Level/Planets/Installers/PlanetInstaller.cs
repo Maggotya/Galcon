@@ -19,10 +19,15 @@ namespace Galcon.Level.Planets.Installers
             Container.Bind<IPlanetView>().To<PlanetView>().AsSingle().WithArguments(_Model);
 
             Container.Bind<SelectableObject>().FromComponentsInChildren().AsSingle();
-            Container.Bind<IShipsManager>().To<ShipsManager>().FromComponentInChildren().AsSingle();
+            Container.Bind<IShipsManager>().To<ShipsManager>().FromComponentsInChildren().AsSingle();
+
+            Container.Bind<IPlanetOwner>().To<PlanetOwner>().FromComponentOn(gameObject).AsSingle();
             Container.Bind<IPopulationManager>().To<PopulationManager>().FromComponentInChildren().AsSingle();
-            Container.Bind<IPlanetOwner>().To<PlanetOwner>().FromComponentOnRoot().AsSingle();
-            Container.Bind<IPlanet>().To<Planet>().FromComponentOnRoot().AsSingle();
+
+            Container.Bind<IPlanet>().To<Planet>().FromComponentOn(gameObject).AsSingle();
+
+            // FromComponentOnRoot при инъекции в субкотейнеры пытается получить компонент на Root субконтейнера.
+            // не знаю, баг это или фича, но мне нужен компонент с конкретно этого объекта
         }
     }
 }
