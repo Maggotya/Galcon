@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Core.Structs.Editor
+namespace Core.Structs.Ranges.Editor
 {
     [CustomPropertyDrawer(typeof(Range))]
     class RangeDrawer : PropertyDrawer

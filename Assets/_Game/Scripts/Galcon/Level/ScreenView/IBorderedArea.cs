@@ -1,4 +1,5 @@
 ﻿using Core.Structs;
+using Core.Structs.Ranges;
 using UnityEngine;
 
 namespace Galcon.Level.ScreenView

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Core;
 using Core.Extensions;
-using Core.Structs;
+using Core.Structs.Ranges;
 using UnityEngine;
 
 namespace Galcon.Level.ScreenView

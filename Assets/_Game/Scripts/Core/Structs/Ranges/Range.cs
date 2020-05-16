@@ -3,7 +3,7 @@ using UnityEngine;
 
 using Random = UnityEngine.Random;
 
-namespace Core.Structs
+namespace Core.Structs.Ranges
 {
     [Serializable]
     public struct Range

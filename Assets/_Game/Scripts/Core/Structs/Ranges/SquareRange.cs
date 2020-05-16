@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Core.Structs
+namespace Core.Structs.Ranges
 {
     [Serializable]
     public struct SquareRange
