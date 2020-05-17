@@ -37,9 +37,17 @@ namespace Core.Structs.Figures
         public float DistanceFromCenter(Vector2 point)
             => Vector2.Distance(_point, point);
 
-        public Vector2 GetRandomPoint()
+        public Vector2 GetRandomPointInside()
         {
             var length = Random.Range(0f, _radius);
+            var vector = Random.insideUnitCircle * length;
+
+            return _point + vector;
+        }
+
+        public Vector2 GetRandomPointInDistance(float distance)
+        {
+            var length = Random.Range(_radius, _radius + distance);
             var vector = Random.insideUnitCircle * length;
 
             return _point + vector;

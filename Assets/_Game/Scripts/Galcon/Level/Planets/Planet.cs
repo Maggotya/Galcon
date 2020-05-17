@@ -122,6 +122,13 @@ namespace Galcon.Level.Planets
         #region LOCATION
         public bool Contains(Vector2 point)
             => circle.Contains(point);
+        public bool Contains(Vector2 point, float eps)
+        {
+            var circle = this.circle;
+            circle.radius += eps;
+            return circle.Contains(point);
+        }
+
         public float DistanceFromBorder(Vector2 point)
             => circle.DistanceFromBorder(point);
         public float DistanceFromCenter(Vector2 point)

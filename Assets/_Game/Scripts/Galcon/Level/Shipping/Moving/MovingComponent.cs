@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Core.Handlers;
+using Core.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,12 +23,12 @@ namespace Galcon.Level.Shipping.Moving
 
         /////////////////////////////////////////////////////////////////
 
-        public MovingComponent(MonoBehaviour host, Transform transform, ISpeedHandler speedHandler)
+        public MovingComponent(MonoBehaviour host, Transform transform, ISpeedConfigs speedConfigs)
         {
             _host = host;
             _transform = transform;
 
-            _speedHandler = speedHandler;
+            _speedHandler = new SpeedHandler(speedConfigs.startSpeed, speedConfigs.acceleration, speedConfigs.acceleration);
             _speedHandler.Stop();
         }
 
@@ -78,7 +79,6 @@ namespace Galcon.Level.Shipping.Moving
             while(!IsArrived(targetPoint, deltaPosition)) {
 
                 deltaPosition = CalculateDeltaPosition(_speedHandler.current, _currentPosition, targetPoint);
-                UpdateRotation(deltaPosition);
                 UpdatePosition(deltaPosition);
 
                 _speedHandler.IncreaseSpeed(Time.deltaTime);
@@ -105,11 +105,6 @@ namespace Galcon.Level.Shipping.Moving
             var newPosition = Vector2.MoveTowards(currentPoint, targetPoint, distance);
             
             return newPosition - currentPoint;
-        }
-        private void UpdateRotation(Vector2 deltaPosition)
-        {
-            if (deltaPosition != Vector2.zero)
-                _transform.up = deltaPosition;
         }
 
         private void UpdatePosition(Vector2 deltaPosition)

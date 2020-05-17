@@ -7,6 +7,8 @@ namespace Galcon.Level.Shipping.Generator.Position
     {
         private readonly IPlanet _planet;
 
+        private const float _MAX_DISTANCE_FROM_PLANET_BORDER = 0.05F;
+
         ////////////////////////////////////////////
         
         public RandomInPlanetShipsPositionGenerator(IPlanet planet)
@@ -17,6 +19,6 @@ namespace Galcon.Level.Shipping.Generator.Position
         ////////////////////////////////////////////
 
         public Vector2 GeneratePosition()
-            => _planet.circle.GetRandomPoint();
+            => _planet.circle.GetRandomPointInDistance(_MAX_DISTANCE_FROM_PLANET_BORDER);
     }
 }

@@ -21,6 +21,8 @@ namespace Galcon.Level.Planets
         void AcceptShip(IShip ship);
 
         bool Contains(Vector2 point);
+        bool Contains(Vector2 point, float eps);
+
         float DistanceFromCenter(Vector2 point);
         float DistanceFromBorder(Vector2 point);
     }

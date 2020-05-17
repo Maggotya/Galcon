@@ -20,6 +20,8 @@ namespace Galcon.Level.Shipping
         public int population => _model.population;
         public string owner => _model.ownerTag;
 
+        private const float _ACCURACY_SHIP_DISTANCE_TO_PLANET = 0.3F;
+
         ///////////////////////////////////////////////////////////////
 
         [Inject]
@@ -30,17 +32,22 @@ namespace Galcon.Level.Shipping
 
             _movingComponent = movingComponent;
             _movingComponent.onMoving += OnMoving;
+            _movingComponent.onFinishMoving += OnFinishedMoving;
         }
 
         private void OnMoving(Vector2 position)
         {
             // ? может вернуть null, что не тождественно false или true
-            if (_model.targetPlanet?.Contains(position) != true)
+            if (_model.targetPlanet?.Contains(position, _ACCURACY_SHIP_DISTANCE_TO_PLANET) != true)
                 return;
 
             _movingComponent.Stop();
-            _model.targetPlanet.AcceptShip(this);
+            OnFinishedMoving();
+        }
 
+        private void OnFinishedMoving()
+        {
+            _model.targetPlanet.AcceptShip(this);
             Destroy();
         }
 
