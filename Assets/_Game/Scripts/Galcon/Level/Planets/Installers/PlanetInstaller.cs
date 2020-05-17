@@ -11,12 +11,12 @@ namespace Galcon.Level.Planets.Installers
 {
     class PlanetInstaller : MonoInstaller<PlanetInstaller>
     {
-        [SerializeField] private GameObject _Model;
+        [SerializeField] private GameObject _ViewModel;
 
         public override void InstallBindings()
         {
             Container.Bind<IPlanetModel>().To<PlanetModel>().AsSingle();
-            Container.Bind<IPlanetView>().To<PlanetView>().AsSingle().WithArguments(_Model);
+            Container.Bind<IPlanetView>().To<PlanetView>().AsSingle().WithArguments(_ViewModel);
 
             Container.Bind<SelectableObject>().FromComponentsInChildren().AsSingle();
             Container.Bind<IShipsManager>().To<ShipsManager>().FromComponentsInChildren().AsSingle();

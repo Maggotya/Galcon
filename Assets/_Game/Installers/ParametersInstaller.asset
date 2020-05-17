@@ -16,5 +16,6 @@ MonoBehaviour:
   _Input: {fileID: 11400000, guid: 8f70aa6ad9797c642b7e59bbe5ecd24b, type: 2}
   _Owners: {fileID: 11400000, guid: b549ce1c5a067e04faeebab4427bd0b8, type: 2}
   _PlanetsGenerator: {fileID: 11400000, guid: 431a92398288361448295b1a301f3da7, type: 2}
+  _OwnersVisible: {fileID: 11400000, guid: b062e2d177208014797389ff53ac135b, type: 2}
   _Population: {fileID: 11400000, guid: 48963e3651a7c6c4aafe183fe3cc00ae, type: 2}
   _Ship: {fileID: 11400000, guid: 4fa0f4a6384e98e4eb9365622cf3a899, type: 2}

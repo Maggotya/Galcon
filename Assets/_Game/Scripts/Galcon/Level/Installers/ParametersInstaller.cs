@@ -16,6 +16,7 @@ namespace Galcon.Level.Installers
         [SerializeField] private InputParameters _Input;
         [SerializeField] private PlanetOwnersParameters _Owners;
         [SerializeField] private PlanetsGeneratorParameters _PlanetsGenerator;
+        [SerializeField] private PlanetOwnersVisibleParameters _OwnersVisible;
         [SerializeField] private PopulationParameters _Population;
         [SerializeField] private ShipParameters _Ship;
 
@@ -25,6 +26,7 @@ namespace Galcon.Level.Installers
             Container.Bind<IInputParameters>().To<InputParameters>().FromInstance(_Input).AsSingle();
             Container.Bind<IPlanetOwnersParameters>().To<PlanetOwnersParameters>().FromInstance(_Owners).AsSingle();
             Container.Bind<IPlanetsGeneratorParameters>().To<PlanetsGeneratorParameters>().FromInstance(_PlanetsGenerator).AsSingle();
+            Container.Bind<IPlanetOwnersVisibleParameters>().To<PlanetOwnersVisibleParameters>().FromInstance(_OwnersVisible).AsSingle();
             Container.Bind<IPopulationParameters>().To<PopulationParameters>().FromInstance(_Population).AsSingle();
             Container.Bind<IShipParameters>().To<ShipParameters>().FromInstance(_Ship).AsSingle();
 
