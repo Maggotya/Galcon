@@ -5,7 +5,6 @@ namespace Galcon.Level.Planets.Creation.Parameters
     [CreateAssetMenu(fileName = "PlanetsGeneratorParameters", menuName = "Parameters/PlanetsGenerator")]
     class PlanetsGeneratorParameters : ScriptableObject, IPlanetsGeneratorParameters
     {
-        [SerializeField] private GameObject _PlanetPrefab;
         [SerializeField][Min(0)] private float _MinPlanetRadius;
         [SerializeField][Min(0)] private float _MaxPlanetRadius;
         [SerializeField][Min(0)] private float _MinDistanceBetweenPlanetsBorders;
@@ -15,7 +14,6 @@ namespace Galcon.Level.Planets.Creation.Parameters
 
         ///////////////////////////////////////////////
 
-        public GameObject planetPrefab => _PlanetPrefab;
         public float minPlanetRadius => _MinPlanetRadius;
         public float maxPlanetRadius => _MaxPlanetRadius;
         public float minDistanceBetweenPlanetsBorders => _MinDistanceBetweenPlanetsBorders;

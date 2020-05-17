@@ -10,15 +10,14 @@ namespace Galcon.Level.Shipping.Installers
 {
     class ShipInstaller : MonoInstaller<ShipInstaller>
     {
-        [SerializeField] private ShipParameters _Parameters;
         [SerializeField] private GameObject _ViewModel;
+
+        [Inject] private IShipParameters _parameters;
 
         //////////////////////////////////////////////////////////////////
         
         public override void InstallBindings()
         {
-            Container.Bind<IShipParameters>().To<ShipParameters>().FromInstance(_Parameters).AsSingle();
-
             Container.Bind<IShipModel>().FromMethod(CreateShipModel).AsSingle();
             Container.Bind<IShipView>().FromMethod(CreateShipView).AsSingle();
 
@@ -30,7 +29,7 @@ namespace Galcon.Level.Shipping.Installers
         //////////////////////////////////////////////////////////////////
 
         private IShipModel CreateShipModel()
-            => new ShipModel(_Parameters.populationCapaciy);
+            => new ShipModel(_parameters.populationCapaciy);
 
         private IShipView CreateShipView()
             => new ShipView(_ViewModel);
@@ -40,8 +39,8 @@ namespace Galcon.Level.Shipping.Installers
 
         private ISpeedHandler CreateSpeedHandler()
             => new SpeedHandler(
-                _Parameters.speedConfigs.startSpeed,
-                _Parameters.speedConfigs.acceleration,
-                _Parameters.speedConfigs.maxSpeed);
+                _parameters.speedConfigs.startSpeed,
+                _parameters.speedConfigs.acceleration,
+                _parameters.speedConfigs.maxSpeed);
     }
 }

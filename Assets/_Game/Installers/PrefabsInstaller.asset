@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42b3d131bd98dd741a242da1a2a9db11, type: 3}
-  m_Name: SpeedConfigs
+  m_Script: {fileID: 11500000, guid: 3fdab84fbe7d1464e8c9fd66f1e604cf, type: 3}
+  m_Name: PrefabsInstaller
   m_EditorClassIdentifier: 
-  _StartSpeed: 5
-  _MaxSpeed: Infinity
-  _Acceleration: 5
+  _Planet: {fileID: 1098089566892603200, guid: 3d76bc475bcde54408d94dc80b0c7a47, type: 3}
+  _Ship: {fileID: 6928714744788236890, guid: 51c5aafd5bf20e44f9f326d0d17a50a4, type: 3}

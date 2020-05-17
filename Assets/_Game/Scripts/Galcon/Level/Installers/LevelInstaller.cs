@@ -6,29 +6,18 @@ using Galcon.Level.InitialConfiguration.Population;
 using Galcon.Level.Parameters;
 using Galcon.Level.Planets;
 using Galcon.Level.Planets.Manager;
-using Galcon.Level.PlayerManagement.Ownership;
-using Galcon.Level.ScreenView;
-using UnityEngine;
 using Zenject;
 
 namespace Galcon.Level.Installers
 {
     class LevelInstaller : MonoInstaller<LevelInstaller>
     {
-        [SerializeField] private PlanetOwnersParameters _PlanetOwners;
-        [SerializeField] private LevelParameters _Parameters;
-        [SerializeField] private BorderedArea _BorderedArea;
-        [SerializeField] private Camera _Camera;
+        [Inject] private ILevelParameters _parameters;
 
         ////////////////////////////////////////////////////////////////
 
         public override void InstallBindings()
         {
-            Container.Bind<Camera>().FromInstance(_Camera).AsSingle();
-            Container.Bind<IBorderedArea>().FromInstance(_BorderedArea).AsSingle();
-            Container.Bind<ILevelParameters>().FromInstance(_Parameters).AsSingle();
-            Container.Bind<IPlanetOwnersParameters>().FromInstance(_PlanetOwners).AsSingle();
-
             Container.Bind<IPlanetsManager>().To<PlanetsManager>().FromComponentsInChildren().AsSingle();
             Container.Bind<IPlanetsConfigurator>().FromMethod(CreatePlanetsConfigurator).AsSingle();
 
@@ -41,15 +30,15 @@ namespace Galcon.Level.Installers
             => new PlanetsConfigurator(CreatePlanetsDistributor(), CreatePlanetsDeselector(), CreatePlanetsPopulator());
 
         private IPlanetsPopulator CreatePlanetsPopulator()
-            => new PlanetsPopulator(_Parameters.initialPopulationOnEveryPlanet);
+            => new PlanetsPopulator(_parameters.initialPopulationOnEveryPlanet);
 
         private IPlanetsDeselector CreatePlanetsDeselector()
             => new PlanetsDeselector();
 
         private IPlanetsForPlayersDistributor CreatePlanetsDistributor()
             => new PlanetsForPlayersDistributor(
-                _Parameters.players, 
-                _Parameters.initialPlanetsEveryPlayerHas,
+                _parameters.players,
+                _parameters.initialPlanetsEveryPlayerHas,
                 CreateConvexHullBuilder());
         private IConvexHullBuilder<IPlanet> CreateConvexHullBuilder()
             => new ConvexHullBuilderByJarvisMethod<IPlanet>();
