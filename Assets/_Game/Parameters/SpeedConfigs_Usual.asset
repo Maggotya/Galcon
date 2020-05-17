@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42b3d131bd98dd741a242da1a2a9db11, type: 3}
-  m_Name: SpeedConfigs
+  m_Name: SpeedConfigs_Usual
   m_EditorClassIdentifier: 
   _StartSpeed: 5
-  _MaxSpeed: Infinity
-  _Acceleration: 5
+  _MaxSpeed: 10
+  _Acceleration: 10

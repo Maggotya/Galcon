@@ -6,5 +6,6 @@ namespace Core.ScriptableObjects
         float startSpeed { get; }
         float maxSpeed { get; }
         float acceleration { get; }
+        bool navMesh { get; }
     }
 }

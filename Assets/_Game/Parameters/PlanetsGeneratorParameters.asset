@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d08e30a388753941b5a88380c269bcc, type: 3}
   m_Name: PlanetsGeneratorParameters
   m_EditorClassIdentifier: 
-  _PlanetPrefab: {fileID: 1098089566892603200, guid: 3d76bc475bcde54408d94dc80b0c7a47,
-    type: 3}
   _MinPlanetRadius: 0.7
   _MaxPlanetRadius: 1.6
-  _MinDistanceBetweenPlanetsBorders: 0.4
+  _MinDistanceBetweenPlanetsBorders: 0.7
   _MinPlanetsCount: 15
   _MaxPlanetsCount: 20
   _PossibleSprites:

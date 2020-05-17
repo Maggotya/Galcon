@@ -1,9 +1,9 @@
-﻿using Core.Handlers;
-using Galcon.Level.Shipping.Model;
+﻿using Galcon.Level.Shipping.Model;
 using Galcon.Level.Shipping.Moving;
 using Galcon.Level.Shipping.Parameters;
 using Galcon.Level.Shipping.View;
 using UnityEngine;
+using UnityEngine.AI;
 using Zenject;
 
 namespace Galcon.Level.Shipping.Installers
@@ -11,6 +11,7 @@ namespace Galcon.Level.Shipping.Installers
     class ShipInstaller : MonoInstaller<ShipInstaller>
     {
         [SerializeField] private GameObject _ViewModel;
+        [SerializeField] private NavMeshAgent _NavMeshAgent;
 
         [Inject] private IShipParameters _parameters;
 
@@ -24,9 +25,19 @@ namespace Galcon.Level.Shipping.Installers
             Container.Bind<IMovingComponent>().FromMethod(CreateMovingComponent).AsSingle();
 
             Container.Bind<IShip>().To<Ship>().FromComponentOnRoot().AsSingle();
+
+            ConfigureNavMeshAgent(_NavMeshAgent);
         }
 
         //////////////////////////////////////////////////////////////////
+
+        private void ConfigureNavMeshAgent(NavMeshAgent agent)
+        {
+            if (agent == null)
+                return;
+
+            agent.enabled = _parameters.speedConfigs.navMesh;
+        }
 
         private IShipModel CreateShipModel()
             => new ShipModel(_parameters.populationCapaciy);
@@ -35,12 +46,8 @@ namespace Galcon.Level.Shipping.Installers
             => new ShipView(_ViewModel);
 
         private IMovingComponent CreateMovingComponent()
-            => new MovingComponent(this, transform, CreateSpeedHandler());
-
-        private ISpeedHandler CreateSpeedHandler()
-            => new SpeedHandler(
-                _parameters.speedConfigs.startSpeed,
-                _parameters.speedConfigs.acceleration,
-                _parameters.speedConfigs.maxSpeed);
+            => _NavMeshAgent != null && _parameters.speedConfigs.navMesh ? 
+            new NavMeshMovingComponent(this, transform, _NavMeshAgent, _parameters.speedConfigs) as IMovingComponent :
+            new MovingComponent(this, transform, _parameters.speedConfigs) as IMovingComponent;
     }
 }

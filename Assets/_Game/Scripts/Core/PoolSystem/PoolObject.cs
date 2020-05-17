@@ -18,9 +18,15 @@ namespace Core.PoolSystem
             => _restoringFromPoolAction = action;
 
         public void RestoreFromPool()
-            => _restoringFromPoolAction?.Invoke();
+        {
+            gameObject.SetActive(true);
+            _restoringFromPoolAction?.Invoke();
+        }
 
         public void StoreToPool()
-            => _storingToPoolAction?.Invoke();
+        {
+            gameObject.SetActive(false);
+            _storingToPoolAction?.Invoke();
+        }
     }
 }
