@@ -10,8 +10,8 @@ namespace Galcon.Level.Population
         UnityEvent onEmergenceOfPopulation { get; set; }
         IntUnityEvent onPopulationIncreased { get; set; }
 
-        int AcceptOpponents(int population);
-        int AcceptAllies(int population);
+        int AcceptOpponentsAndReturnRemainder(int population);
+        int AcceptAlliesAndReturnRemainder(int population);
         int EvictPopulationForShips();
         void SetPopulation(int population);
     }

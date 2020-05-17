@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Galcon.Level.PlayerManagement.Ownership.Parameters
 {
     [Serializable]
-    struct PlanetOwnerConfig : IPlanetOwnerConfig
+    public struct PlanetOwnerConfig : IPlanetOwnerConfig
     {
         [SerializeField] private string _OwnerTag;
         [SerializeField] private Color _OwnerColor;

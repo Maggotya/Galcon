@@ -83,6 +83,7 @@ namespace Galcon.Level.Planets
         public void SetSprite(Sprite sprite)
         {
             _view.SetSprite(sprite);
+            Logging.Log(_source, "Set sprite");
         }
 
         public void SetSelected(bool status)
@@ -100,6 +101,8 @@ namespace Galcon.Level.Planets
         {
             var populationToSend = _populationManager.EvictPopulationForShips();
             _shipsManager.LaunchShips(owner.ownerTag, _model.color, populationToSend, targetPlanet);
+
+            Logging.Log(_source, "Sent ships");
         }
 
         public void AcceptShip(IShip ship)
@@ -110,11 +113,11 @@ namespace Galcon.Level.Planets
             var population = ship.population;
 
             if (owner.IsOwner(ship.owner) == false)
-                population = _populationManager.AcceptOpponents(population);
+                population = _populationManager.AcceptOpponentsAndReturnRemainder(population);
 
             if (population > 0) {
                 owner.SetTag(ship.owner);
-                _populationManager.AcceptAllies(population);
+                _populationManager.AcceptAlliesAndReturnRemainder(population);
             }
         }
 

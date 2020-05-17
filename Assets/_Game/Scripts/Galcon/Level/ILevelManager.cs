@@ -2,5 +2,7 @@
 {
     interface ILevelManager
     {
+        void StartLevel();
+        void ClearLevel();
     }
 }

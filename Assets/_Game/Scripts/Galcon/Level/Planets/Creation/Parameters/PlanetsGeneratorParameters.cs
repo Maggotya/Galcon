@@ -3,7 +3,7 @@
 namespace Galcon.Level.Planets.Creation.Parameters
 {
     [CreateAssetMenu(fileName = "PlanetsGeneratorParameters", menuName = "Parameters/PlanetsGenerator")]
-    class PlanetsGeneratorParameters : ScriptableObject, IPlanetsGeneratorParameters
+    public class PlanetsGeneratorParameters : ScriptableObject, IPlanetsGeneratorParameters
     {
         [SerializeField][Min(0)] private float _MinPlanetRadius;
         [SerializeField][Min(0)] private float _MaxPlanetRadius;

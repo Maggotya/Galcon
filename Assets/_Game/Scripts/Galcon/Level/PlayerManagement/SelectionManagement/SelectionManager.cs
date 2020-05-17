@@ -1,4 +1,5 @@
-﻿using Core.Extensions;
+﻿using Core;
+using Core.Extensions;
 using Galcon.Level.Planets.Manager;
 using UnityEngine;
 using UnityEngine.Events;
@@ -51,12 +52,15 @@ namespace Galcon.Level.PlayerManagement.SelectionManagement
         public void InputStarted(Vector2 screenPoint)
         {
             _startPoint = screenPoint;
+            Logging.Log(_source, "Started input");
         }
 
         public void InputEnded(Vector2 screenPoint)
         {
-            if (WasItClick(screenPoint) == false)
+            if (WasItClick(screenPoint) == false) {
+                Logging.Log(_source, "Cancel input");
                 return;
+            }
 
             var point = new Vector3(screenPoint.x, screenPoint.y, _camera.transform.position.z);
             var worldPoint = _camera.ScreenToWorldPoint(point);
@@ -65,6 +69,8 @@ namespace Galcon.Level.PlayerManagement.SelectionManagement
 
             if (planet != null) _OnPlanetClicked?.Invoke(planet);
             else _OnDeselectedAll?.Invoke();
+
+            Logging.Log(_source, "Clicked");
         }
 
         public void InputStationary(Vector2 screenPoint)

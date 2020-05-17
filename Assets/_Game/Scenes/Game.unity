@@ -148,10 +148,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 582366601}
+  - component: {fileID: 582366603}
   - component: {fileID: 582366600}
   - component: {fileID: 582366602}
   m_Layer: 0
-  m_Name: SceneContext
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,6 +224,18 @@ MonoBehaviour:
   _LevelManager: {fileID: 63153141}
   _BorderedArea: {fileID: 6607596018951822816}
   _Camera: {fileID: 212587992}
+--- !u!114 &582366603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582366599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028a4894f8756b6499a95e5a21dad0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1786519398
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +555,7 @@ PrefabInstance:
     - target: {fileID: 6607596018930452183, guid: b0b024d2b75961a4fbfca35566d36cc2,
         type: 3}
       propertyPath: orthographic size
-      value: 6.75
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0b024d2b75961a4fbfca35566d36cc2, type: 3}

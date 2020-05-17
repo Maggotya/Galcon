@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using Core;
 using Core.Extensions;
 using Galcon.Level.InitialConfiguration;
 using Galcon.Level.Planets.Manager;
@@ -24,11 +24,6 @@ namespace Galcon.Level
 
         ////////////////////////////////////////////////////////
 
-        private void Start()
-        {
-            StartLevel();
-        }
-
         public void StartLevel()
         {
             ClearLevel();
@@ -37,12 +32,16 @@ namespace Galcon.Level
             _planetsConfigurator.Configure(_planetsManager.planets);
 
             Invoke("BakeLevel", 0.5f);
+            Logging.Log(_source, "Started level");
         }
 
         public void ClearLevel()
         {
             _planetsManager.Clear();
+            Logging.Log(_source, "Cleared level");
         }
+
+        ////////////////////////////////////////////////////////
 
         private void BakeLevel()
             => _navMeshRebaker.Rebake();

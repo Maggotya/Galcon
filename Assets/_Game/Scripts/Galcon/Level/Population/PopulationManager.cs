@@ -100,7 +100,7 @@ namespace Galcon.Level.Population
         ///////////////////////////////////////////////////////////
 
         /// <returns>Остатки непринятых оппонентов</returns>
-        public int AcceptOpponents(int population)
+        public int AcceptOpponentsAndReturnRemainder(int population)
         {
             var acceptedPopulation = Mathf.Min(_model.count, population);
             _model.Decrease(acceptedPopulation);
@@ -110,7 +110,7 @@ namespace Galcon.Level.Population
         }
 
         /// <returns>Остатки непринятых союзников</returns>
-        public int AcceptAllies(int population)
+        public int AcceptAlliesAndReturnRemainder(int population)
         {
             _model.Increase(population);
             Logging.Log(_source, $"Accept {population} allies");

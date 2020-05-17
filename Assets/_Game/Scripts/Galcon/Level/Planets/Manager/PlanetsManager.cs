@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Core;
 using Core.Extensions;
 using Galcon.Level.Planets.Creation.Generator;
 using UnityEngine;
@@ -25,6 +26,7 @@ namespace Galcon.Level.Planets.Manager
         {
             Clear();
             planets = _generator.Generate();
+            Logging.Log(_source, "Generated planets");
         }
 
         public void Clear()
@@ -36,6 +38,7 @@ namespace Galcon.Level.Planets.Manager
                 Destroy(planet.gameObject);
 
             planets = new IPlanet[0];
+            Logging.Log(_source, "Cleared planets");
         }
 
         public IPlanet GetPlanetByPosition(Vector2 position)

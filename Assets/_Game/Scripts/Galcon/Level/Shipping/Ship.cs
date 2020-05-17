@@ -47,6 +47,7 @@ namespace Galcon.Level.Shipping
 
         private void OnFinishedMoving()
         {
+            Logging.Log(_source, "Finished move");
             _model.targetPlanet.AcceptShip(this);
             Destroy();
         }
@@ -59,6 +60,7 @@ namespace Galcon.Level.Shipping
             _model.ownerTag = ownerTag;
             _model.population = inputPopulation;
 
+            Logging.Log(_source, $"Populated by {_model.population}");
             return inputPopulation - _model.population;
         }
 
@@ -66,6 +68,7 @@ namespace Galcon.Level.Shipping
         {
             _model.targetPlanet = planet;
             _movingComponent.MoveTo(planet.gameObject.transform.position);
+            Logging.Log(_source, "Started move");
         }
 
         public void Destroy()
@@ -74,7 +77,7 @@ namespace Galcon.Level.Shipping
                 Destroy(gameObject);
 
             poolObject.StoreToPool();
-            Logging.Log(_source, "Destroy");
+            Logging.Log(_source, "Destroyed");
         }
     }
 }

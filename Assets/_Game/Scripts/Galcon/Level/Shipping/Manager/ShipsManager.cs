@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Core;
 using Core.Extensions;
 using Galcon.Level.Planets;
 using Galcon.Level.Shipping.Generator;
@@ -30,6 +31,7 @@ namespace Galcon.Level.Shipping.Manager
                 ships.Enqueue(ship);
             }
 
+            Logging.Log(_source, "Created ships");
             return ships.ToArray();
         }
  
@@ -40,6 +42,8 @@ namespace Galcon.Level.Shipping.Manager
         {
             foreach (var ship in ships)
                 ship?.LaunchToPlanet(targetPlanet);
+
+            Logging.Log(_source, "Launched ships");
         }
     }
 }
