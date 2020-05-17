@@ -10,7 +10,7 @@ namespace Galcon.Level.Planets.Creation.Parameters
         [SerializeField][Min(0)] private float _MinDistanceBetweenPlanetsBorders;
         [SerializeField][Min(0)] private int _MinPlanetsCount;
         [SerializeField][Min(0)] private int _MaxPlanetsCount;
-        [SerializeField] private Sprite[] _PossibleSprites;
+        [SerializeField][HideInInspector] private Sprite[] _PossibleSprites;
 
         ///////////////////////////////////////////////
 

@@ -48,7 +48,6 @@ namespace Galcon.Level.PlayerManagement.Ownership.Parameters.Editor
 
             if (EditorGUI.EndChangeCheck())
                 tagProperty.stringValue = tag;
-
         }
 
         private void DrawColorField(Rect position, SerializedProperty property)
