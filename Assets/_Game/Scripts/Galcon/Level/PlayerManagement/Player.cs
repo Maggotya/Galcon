@@ -1,4 +1,5 @@
-﻿using Core;
+﻿using System.Linq;
+using Core;
 using Core.Extensions;
 using Galcon.Level.Planets;
 using Galcon.Level.PlayerManagement.Installers;
@@ -29,11 +30,15 @@ namespace Galcon.Level.PlayerManagement
 
         #region INITIALIZATION
 
-        // здесь используются callback'и, т.к. внутри класса так же имеются проверки,
-        // которые могут отклонить добавление или удаление эелемента, а вносить в них
-        // логику по проверке собственничества планетой мне не захотелось. 
-        // использовать bool на выходе для Add и Remove не стал тоже, т.к. для этого
-        // бы пришлось делать всякие трюки, чтобы правильно выполнить DeleseltAll. 
+        // здесь используются callback'и, т.к. внутри класса имеются проверки,
+        // которые могут отклонить добавление или удаление эелемента. вносить в них
+        // логику по проверке собственничества планетой мне не захотелось, как и выносить наружу
+        // то, что может быть проверено внутри класса, тоже.
+        // использовать bool на выходе для Add и Remove также не стал, т.к. для этого
+        // бы пришлось делать всякие трюки, чтобы правильно выполнить DeselectAll. 
+        // к тому же класс всё равно требует в себя OnPlanetChangedOwner - не увидел разницы
+        // в том, чтобы передавать один делегат или три.
+        // решение вполне спорное, но довольно быстро переделываемое
         private SelectedPlanets CreateSelectedPlanets()
             => new SelectedPlanets(
                 OnPlanetSelect,
@@ -84,7 +89,9 @@ namespace Galcon.Level.PlayerManagement
             if (planet == null)
                 return;
 
-            foreach (var p in _selectedPlanets.planets)
+            var planets = _selectedPlanets.planets.Where(p => p != planet);
+
+            foreach (var p in planets)
                 p.SendShips(planet);
 
             DeselectAll();

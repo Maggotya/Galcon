@@ -15,10 +15,10 @@ MonoBehaviour:
   _PlanetPrefab: {fileID: 1098089566892603200, guid: 3d76bc475bcde54408d94dc80b0c7a47,
     type: 3}
   _MinPlanetRadius: 0.7
-  _MaxPlanetRadius: 2
+  _MaxPlanetRadius: 1.6
   _MinDistanceBetweenPlanetsBorders: 0.4
-  _MinPlanetsCount: 10
-  _MaxPlanetsCount: 15
+  _MinPlanetsCount: 15
+  _MaxPlanetsCount: 20
   _PossibleSprites:
   - {fileID: 21300000, guid: 769c110bc070f7c44ad7015f19c78307, type: 3}
   - {fileID: 21300000, guid: 5d766fc45f57a164fbb12427207013f8, type: 3}

@@ -94,8 +94,7 @@ namespace Galcon.Level.Planets
         }
         #endregion // SETTERS
 
-        /////////////////////////////////////////////////////
-
+        #region SHIPPING
         public void SendShips(IPlanet targetPlanet)
         {
             var populationToSend = _populationManager.EvictPopulationForShips();
@@ -104,13 +103,21 @@ namespace Galcon.Level.Planets
 
         public void AcceptShip(IShip ship)
         {
-            if (owner.IsOwner(ship.owner))
-                _populationManager.AcceptAllies(ship.population);
-            else
-                _populationManager.AcceptOpponents(ship.population);
+            if (ship == null)
+                return;
+
+            var population = ship.population;
+
+            if (owner.IsOwner(ship.owner) == false)
+                population = _populationManager.AcceptOpponents(population);
+
+            if (population > 0) {
+                owner.SetTag(ship.owner);
+                _populationManager.AcceptAllies(population);
+            }
         }
 
-        /////////////////////////////////////////////////////
+        #endregion // SHIPPING
 
         #region LOCATION
         public bool Contains(Vector2 point)

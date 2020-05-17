@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ab780adf64d8d241bccc3fdd7f1e1ca, type: 3}
-  m_Name: PopulationParameters
+  m_Script: {fileID: 11500000, guid: 42b3d131bd98dd741a242da1a2a9db11, type: 3}
+  m_Name: SpeedConfigs
   m_EditorClassIdentifier: 
-  _ProportionToEvictOnShips: 0.5
-  _PopulationPerInterval: 1
-  _UpdateIntervalInSeconds: 0.2
+  _StartSpeed: 10
+  _MaxSpeed: Infinity
+  _Acceleration: 10
