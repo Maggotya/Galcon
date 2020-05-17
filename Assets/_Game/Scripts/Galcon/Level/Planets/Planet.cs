@@ -5,6 +5,7 @@ using Core.Structs.Figures;
 using Galcon.Level.Planets.Model;
 using Galcon.Level.Planets.View;
 using Galcon.Level.PlayerManagement.Ownership;
+using Galcon.Level.PlayerManagement.Ownership.Parameters;
 using Galcon.Level.Population;
 using Galcon.Level.Shipping;
 using Galcon.Level.Shipping.Manager;

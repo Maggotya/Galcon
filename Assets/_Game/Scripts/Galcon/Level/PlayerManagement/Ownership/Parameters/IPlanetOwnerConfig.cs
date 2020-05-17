@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Galcon.Level.PlayerManagement.Ownership
+namespace Galcon.Level.PlayerManagement.Ownership.Parameters
 {
     interface IPlanetOwnerConfig
     {

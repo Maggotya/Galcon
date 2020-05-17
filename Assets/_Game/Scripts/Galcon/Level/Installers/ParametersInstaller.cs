@@ -1,7 +1,7 @@
 ﻿using Galcon.Level.Parameters;
 using Galcon.Level.Planets.Creation.Parameters;
 using Galcon.Level.PlayerManagement.InputManagement.Parameters;
-using Galcon.Level.PlayerManagement.Ownership;
+using Galcon.Level.PlayerManagement.Ownership.Parameters;
 using Galcon.Level.Population.Parameters;
 using Galcon.Level.Shipping.Parameters;
 using UnityEngine;

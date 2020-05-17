@@ -2,14 +2,14 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Galcon.Level.PlayerManagement.Ownership
+namespace Galcon.Level.PlayerManagement.Ownership.Parameters
 {
     [CreateAssetMenu(fileName = "PlanetOwnersParameters", menuName = "Parameters/PlanetOwners")]
     class PlanetOwnersParameters : ScriptableObject, IPlanetOwnersParameters
     {
-        [SerializeField] private PlanetOwnerConfig[] _Configs;
+        [SerializeField] private PlanetOwnerConfig[] _Owners;
 
-        public IPlanetOwnerConfig[] configs => _Configs.Select(c => c as IPlanetOwnerConfig).ToArray();
+        public IPlanetOwnerConfig[] owners => _Owners.Select(c => c as IPlanetOwnerConfig).ToArray();
 
         private const string _DEFAULT_TAG = "Default";
 
@@ -17,14 +17,14 @@ namespace Galcon.Level.PlayerManagement.Ownership
 
         #region ON_ENABLE_CORRECTIONS
         private void OnEnable()
-            => _Configs = AddAbsentDefaultElement(
+            => _Owners = AddAbsentDefaultElement(
                 GetDistinctedByTagList()).ToArray();
 
         private List<PlanetOwnerConfig> GetDistinctedByTagList()
-            => _Configs
+            => _Owners
                 .Select(c => c.ownerTag)
                 .Distinct()
-                .Select(t => _Configs.First(c => c.ownerTag == t))
+                .Select(t => _Owners.First(c => c.ownerTag == t))
                 .ToList();
 
         private List<PlanetOwnerConfig> AddAbsentDefaultElement(List<PlanetOwnerConfig> configs)
@@ -39,6 +39,6 @@ namespace Galcon.Level.PlayerManagement.Ownership
         //////////////////////////////////////////////////////////
 
         public IPlanetOwnerConfig GetConfig(string tag)
-            => configs.FirstOrDefault(c => c.ownerTag == tag) ?? GetConfig(_DEFAULT_TAG);
+            => owners.FirstOrDefault(c => c.ownerTag == tag) ?? GetConfig(_DEFAULT_TAG);
     }
 }

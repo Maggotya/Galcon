@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Galcon.Level.PlayerManagement.Ownership
+namespace Galcon.Level.PlayerManagement.Ownership.Parameters
 {
     [Serializable]
     struct PlanetOwnerConfig : IPlanetOwnerConfig
