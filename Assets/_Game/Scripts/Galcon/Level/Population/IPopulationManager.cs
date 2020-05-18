@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Galcon.Level.Population
 {
-    interface IPopulationManager
+    public interface  IPopulationManager
     {
         int population { get; }
         UnityEvent onPopulationExterminated { get; set; }

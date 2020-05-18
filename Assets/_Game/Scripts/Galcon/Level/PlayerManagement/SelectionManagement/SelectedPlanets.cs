@@ -10,7 +10,7 @@ namespace Galcon.Level.PlayerManagement.SelectionManagement
     // подписку(отписку) на указанное действия. А для этого нужно сохранить ссылку на событие.
     // если делать через чистое объявление делегатов каждый раз, то RemoveListener ожидаемо 
     // ничего не удаляет, что неизбежно приведёт к багам и утечкам памяти.
-    class SelectedPlanets
+    public class SelectedPlanets
     {
         private UnityAction<IPlanet> _onPlanetAdded;
         private UnityAction<IPlanet> _onPlanetRemoved;

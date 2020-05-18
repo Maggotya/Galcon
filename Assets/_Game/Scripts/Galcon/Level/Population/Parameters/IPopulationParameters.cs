@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level.Population.Parameters
 {
-    interface IPopulationParameters
+    public interface  IPopulationParameters
     {
         float proportionToEvictOnShips { get; }
         int populationPerInterval { get; }

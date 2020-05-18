@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Shipping
 {
-    interface IShip : IGameObjectHost, IDestroyable
+    public interface  IShip : IGameObjectHost, IDestroyable
     {
         int population { get; }
         string owner { get; }

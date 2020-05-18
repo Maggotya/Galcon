@@ -5,7 +5,7 @@ using UnityEngine.Events;
 namespace Galcon.Level.PlayerManagement.SelectionManagement
 {
     [Serializable]
-    class IPlanetUnityEvent : UnityEvent<IPlanet>
+    public class IPlanetUnityEvent : UnityEvent<IPlanet>
     {
     }
 }

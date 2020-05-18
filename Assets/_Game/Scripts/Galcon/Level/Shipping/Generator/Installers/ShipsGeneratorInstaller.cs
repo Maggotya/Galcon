@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Galcon.Level.Shipping.Generator.Installers
 {
-    class ShipsGeneratorInstaller : MonoInstaller<ShipsGeneratorInstaller>
+    public class ShipsGeneratorInstaller : MonoInstaller<ShipsGeneratorInstaller>
     {
         [SerializeField] private Transform _PoolContainer;
 

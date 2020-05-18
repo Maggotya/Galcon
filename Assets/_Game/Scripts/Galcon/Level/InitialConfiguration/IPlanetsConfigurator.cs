@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.InitialConfiguration
 {
-    interface IPlanetsConfigurator
+    public interface  IPlanetsConfigurator
     {
         void Configure(IPlanet[] planets);
     }

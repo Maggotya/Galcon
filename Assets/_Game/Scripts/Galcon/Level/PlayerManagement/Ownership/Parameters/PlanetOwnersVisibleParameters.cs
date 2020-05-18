@@ -3,7 +3,7 @@
 namespace Galcon.Level.PlayerManagement.Ownership.Parameters
 {
     [CreateAssetMenu(fileName = "PlanetPopulationVisibleParameters", menuName = "Parameters/PlanetPopulationVisible")]
-    class PlanetOwnersVisibleParameters : ScriptableObject, IPlanetOwnersVisibleParameters
+    public class PlanetOwnersVisibleParameters : ScriptableObject, IPlanetOwnersVisibleParameters
     {
         [SerializeField] private string[] _PopulationVisibleFor;
 

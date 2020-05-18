@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Planets.View
 {
-    interface IPlanetView 
+    public interface  IPlanetView 
     { 
         void SetRadius(float size);
         void SetColor(Color color);

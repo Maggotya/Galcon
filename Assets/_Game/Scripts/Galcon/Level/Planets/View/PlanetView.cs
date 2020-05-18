@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Planets.View
 {
-    class PlanetView : ComponentView, IPlanetView
+    public class PlanetView : ComponentView, IPlanetView
     {
         private readonly Transform _transform;
         private readonly SpriteRenderer _spriteRenderer;

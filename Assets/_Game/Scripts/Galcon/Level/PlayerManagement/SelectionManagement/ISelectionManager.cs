@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Galcon.Level.PlayerManagement.SelectionManagement
 {
-    interface ISelectionManager
+    public interface  ISelectionManager
     {
         IPlanetUnityEvent onPlanetSelected { get; set; }
         IPlanetUnityEvent onPlanetDeselected { get; set; }

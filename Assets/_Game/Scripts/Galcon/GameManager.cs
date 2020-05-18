@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Galcon
 {
-    class GameManager : MyMonoBehaviour
+    public class GameManager : MyMonoBehaviour
     {
         private ILevelManager _levelManager;
 

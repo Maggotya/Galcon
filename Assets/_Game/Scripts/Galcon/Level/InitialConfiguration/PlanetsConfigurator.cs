@@ -5,7 +5,7 @@ using Galcon.Level.Planets;
 
 namespace Galcon.Level.InitialConfiguration
 {
-    class PlanetsConfigurator : IPlanetsConfigurator
+    public class PlanetsConfigurator : IPlanetsConfigurator
     {
         private readonly IPlanetsPopulator _planetsPopulator;
         private readonly IPlanetsDeselector _planetsDeselector;

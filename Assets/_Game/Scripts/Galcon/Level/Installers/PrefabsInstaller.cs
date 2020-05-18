@@ -5,7 +5,7 @@ using Zenject;
 namespace Galcon.Level.Installers
 {
     [CreateAssetMenu(fileName = "PrefabsInstaller", menuName = "Installers/Prefabs")]
-    class PrefabsInstaller : ScriptableObjectInstaller<PrefabsInstaller>
+    public class PrefabsInstaller : ScriptableObjectInstaller<PrefabsInstaller>
     {
         [SerializeField] private GameObject _Planet;
         [SerializeField] private GameObject _Ship;

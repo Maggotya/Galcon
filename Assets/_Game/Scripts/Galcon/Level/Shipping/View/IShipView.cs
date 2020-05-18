@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Shipping.View
 {
-    interface IShipView
+    public interface  IShipView
     {
         void SetColor(Color color);
     } 

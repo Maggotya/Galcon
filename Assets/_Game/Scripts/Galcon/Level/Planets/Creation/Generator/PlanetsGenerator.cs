@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Planets.Creation.Generator
 {
-    class PlanetsGenerator : IPlanetsGenerator
+    public class PlanetsGenerator : IPlanetsGenerator
     {
         private readonly int _minCount;
         private readonly int _maxCount;

@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level.ScreenView
 {
-    enum BorderType
+    public enum BorderType
     {
         Left, Right, Top, Bottom
     }

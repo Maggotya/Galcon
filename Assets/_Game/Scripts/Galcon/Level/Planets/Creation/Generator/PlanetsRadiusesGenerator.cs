@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Planets.Creation.Generator
 {
-    class PlanetsRadiusesGenerator : IPlanetsRadiusesGenerator
+    public class PlanetsRadiusesGenerator : IPlanetsRadiusesGenerator
     {
         private readonly float _minRadius;
         private readonly float _maxRadius;

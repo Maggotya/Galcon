@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Planets.Manager
 {
-    interface IPlanetsManager
+    public interface  IPlanetsManager
     {
         IPlanet[] planets { get; }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.ScreenView
 {
-    class Border : MyMonoBehaviour, IBorder
+    public class Border : MyMonoBehaviour, IBorder
     {
         [SerializeField] private BorderType _Type;
 

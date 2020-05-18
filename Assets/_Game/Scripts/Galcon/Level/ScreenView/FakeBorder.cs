@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.ScreenView
 {
-    class FakeBorder : IBorder
+    public class FakeBorder : IBorder
     {
         private IBorderDistanceCalculator _distance { get; set; }
 

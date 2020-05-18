@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Shipping.Generator.Position
 {
-    interface IShipsPositionGenerator
+    public interface  IShipsPositionGenerator
     {
         Vector2 GeneratePosition();
     }

@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level.Parameters
 {
-    interface ILevelParameters
+    public interface  ILevelParameters
     {
         string[] players { get; }
         int initialPlanetsEveryPlayerHas { get; }

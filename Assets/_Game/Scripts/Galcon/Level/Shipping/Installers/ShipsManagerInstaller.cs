@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Galcon.Level.Shipping.Installers
 {
-    class ShipsManagerInstaller : MonoInstaller<ShipsManagerInstaller>
+    public class ShipsManagerInstaller : MonoInstaller<ShipsManagerInstaller>
     {
         [SerializeField] private Transform _ShipsContainer;
 

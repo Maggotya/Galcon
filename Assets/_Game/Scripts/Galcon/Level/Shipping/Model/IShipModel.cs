@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Shipping.Model
 {
-    interface IShipModel
+    public interface  IShipModel
     {
         int maxPopulation { get; }
         int population { get; set; }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Shipping.Model
 {
-    struct ShipModel : IShipModel
+    public struct  ShipModel : IShipModel
     {
         private int _maxPopulation;
         private int _population;

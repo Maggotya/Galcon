@@ -7,7 +7,7 @@ using Zenject;
 
 namespace Galcon.Level.PlayerManagement.InputManagement
 {
-    class InputManager : MyMonoBehaviour, IInputManager
+    public class InputManager : MyMonoBehaviour, IInputManager
     {
         [SerializeField] private Vector2UnityEvent _OnInputBegan;
         [SerializeField] private Vector2UnityEvent _OnInputMoved;

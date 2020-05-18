@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Shipping.Parameters
 {
-    interface IShipParameters
+    public interface  IShipParameters
     {
         int populationCapaciy { get; }
         ISpeedConfigs speedConfigs { get; }

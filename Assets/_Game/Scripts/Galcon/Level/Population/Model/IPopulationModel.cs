@@ -3,7 +3,7 @@ using Core.Interfaces;
 
 namespace Galcon.Level.Population.Model
 {
-    interface IPopulationModel : IResetable
+    public interface  IPopulationModel : IResetable
     {
         int count { get; }
         Action<int> onChanged { get; set; }

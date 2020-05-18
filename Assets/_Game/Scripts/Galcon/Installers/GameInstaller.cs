@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Galcon.Installers
 {
-    class GameInstaller : MonoInstaller<GameInstaller>
+    public class GameInstaller : MonoInstaller<GameInstaller>
     {
         [SerializeField] private NavMeshRebaker _NavMeshRebaker;
         [SerializeField] private LevelManager _LevelManager;

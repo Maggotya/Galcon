@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level.Shipping.Generator
 {
-    interface IShipsGenerator
+    public interface  IShipsGenerator
     {
         IShip Generate(); 
         bool TryGenerate(out IShip ship);

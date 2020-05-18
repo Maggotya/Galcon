@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.PlayerManagement.Ownership
 {
-    interface IPlanetOwner
+    public interface  IPlanetOwner
     {
         bool isClear { get; }
         string ownerTag { get; set; }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Planets
 {
-    interface IPlanet : IGameObjectHost
+    public interface  IPlanet : IGameObjectHost
     {
         IPlanetOwner owner { get; }
         Circle circle { get; }

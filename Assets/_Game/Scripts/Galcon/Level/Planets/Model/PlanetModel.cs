@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Planets.Model
 {
-    struct PlanetModel : IPlanetModel
+    public struct  PlanetModel : IPlanetModel
     {
         private float _radius;
         private Color _color;

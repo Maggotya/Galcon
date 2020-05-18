@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Shipping.Generator.Position
 {
-    class RandomInPlanetShipsPositionGenerator : IShipsPositionGenerator
+    public class RandomInPlanetShipsPositionGenerator : IShipsPositionGenerator
     {
         private readonly IPlanet _planet;
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Planets.Creation.Parameters
 {
-    interface IPlanetsGeneratorParameters
+    public interface  IPlanetsGeneratorParameters
     {
         float minPlanetRadius { get; }
         float maxPlanetRadius { get; }

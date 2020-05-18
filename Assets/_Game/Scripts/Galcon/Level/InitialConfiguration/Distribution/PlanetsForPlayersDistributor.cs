@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace Galcon.Level.InitialConfiguration.Distribution
 {
-    class PlanetsForPlayersDistributor : IPlanetsForPlayersDistributor
+    public class PlanetsForPlayersDistributor : IPlanetsForPlayersDistributor
     {
         private readonly string[] _players;
         private readonly int _planetsForPerPlayer;

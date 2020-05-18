@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.PlayerManagement.InputManagement.Handling.Builder
 {
-    class HandlersDirector : IHandlersDirector
+    public class HandlersDirector : IHandlersDirector
     {
         private readonly IHandlersBuilder _builder;
         private readonly IInputParameters _parameters;
@@ -17,7 +17,7 @@ namespace Galcon.Level.PlayerManagement.InputManagement.Handling.Builder
 
         ///////////////////////////////////////////////////////
         
-        public IInputHandler Construct()
+        public IInputHandler Construct ()
         {
             _builder.Reset();
 

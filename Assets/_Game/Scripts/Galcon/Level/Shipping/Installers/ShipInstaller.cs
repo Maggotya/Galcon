@@ -8,7 +8,7 @@ using Zenject;
 
 namespace Galcon.Level.Shipping.Installers
 {
-    class ShipInstaller : MonoInstaller<ShipInstaller>
+    public class ShipInstaller : MonoInstaller<ShipInstaller>
     {
         [SerializeField] private GameObject _ViewModel;
         [SerializeField] private NavMeshAgent _NavMeshAgent;

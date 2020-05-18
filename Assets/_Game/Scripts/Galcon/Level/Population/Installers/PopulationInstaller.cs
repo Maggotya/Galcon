@@ -7,7 +7,7 @@ using Zenject;
 
 namespace Galcon.Level.Population.Installers
 {
-    class PopulationInstaller : MonoInstaller<PopulationInstaller>
+    public class PopulationInstaller : MonoInstaller<PopulationInstaller>
     {
         [SerializeField] private PopulationParameters _Parameters;
         [SerializeField] private GameObject _ViewModel;

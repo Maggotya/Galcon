@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace Galcon.Level.Shipping.Moving
 {
-    class MovingComponent : IMovingComponent
+    public class MovingComponent : IMovingComponent
     {
         private readonly MonoBehaviour _host;
         private readonly Transform _transform;

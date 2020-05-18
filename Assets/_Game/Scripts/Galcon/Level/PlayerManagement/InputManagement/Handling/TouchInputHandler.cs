@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.PlayerManagement.InputManagement.Handling
 {
-    class TouchInputHandler : InputHandler
+    public class TouchInputHandler : InputHandler
     {
         protected override bool _canHandle => Input.touchSupported;
 

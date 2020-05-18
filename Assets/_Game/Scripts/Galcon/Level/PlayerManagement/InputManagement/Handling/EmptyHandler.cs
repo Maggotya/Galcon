@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level.PlayerManagement.InputManagement.Handling
 {
-    class EmptyHandler : InputHandler
+    public class EmptyHandler : InputHandler
     {
         protected override bool _canHandle => false;
         protected override void OnHandle() { }

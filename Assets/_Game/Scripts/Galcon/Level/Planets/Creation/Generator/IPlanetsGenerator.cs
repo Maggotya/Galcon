@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level.Planets.Creation.Generator
 {
-    interface IPlanetsGenerator
+    public interface  IPlanetsGenerator
     {
         IPlanet[] Generate();
     }

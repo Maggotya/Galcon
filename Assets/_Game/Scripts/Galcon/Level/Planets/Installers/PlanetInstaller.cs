@@ -9,7 +9,7 @@ using Zenject;
 
 namespace Galcon.Level.Planets.Installers
 {
-    class PlanetInstaller : MonoInstaller<PlanetInstaller>
+    public class PlanetInstaller : MonoInstaller<PlanetInstaller>
     {
         [SerializeField] private GameObject _ViewModel;
 

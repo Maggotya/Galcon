@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Galcon.Level.Shipping.Parameters
 {
     [CreateAssetMenu(fileName = "ShipParameters", menuName = "Parameters/Ship")]
-    class ShipParameters : ScriptableObject, IShipParameters
+    public class ShipParameters : ScriptableObject, IShipParameters
     {
         [SerializeField][Min(0)] private int _PopulationCapacity;
         [SerializeField] private SpeedConfigs _SpeedConfigs;

@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Galcon.Level.PlayerManagement.Installers
 {
-    class PlayerInstaller : MonoInstaller<PlayerInstaller>
+    public class PlayerInstaller : MonoInstaller<PlayerInstaller>
     {
         public override void InstallBindings()
         {

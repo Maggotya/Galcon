@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.ScreenView
 {
-    interface IBorder
+    public interface  IBorder
     {
         BorderType type { get; }
         Vector2 position { get; }

@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Galcon.Level
 {
-    class LevelManager : MyMonoBehaviour, ILevelManager
+    public class LevelManager : MyMonoBehaviour, ILevelManager
     {
         private NavMeshRebaker _navMeshRebaker;
         private IPlanetsManager _planetsManager;

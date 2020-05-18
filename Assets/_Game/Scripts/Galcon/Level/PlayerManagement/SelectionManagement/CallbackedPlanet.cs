@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace Galcon.Level.PlayerManagement.SelectionManagement
 {
-    struct CallbackedPlanet : IEquatable<CallbackedPlanet>, IEquatable<IPlanet>
+    public struct  CallbackedPlanet : IEquatable<CallbackedPlanet>, IEquatable<IPlanet>
     {
         private IPlanet _planet;
         private UnityAction<string> _callback;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Shipping.View
 {
-    class ShipView : ComponentView, IShipView
+    public class ShipView : ComponentView, IShipView
     {
         private readonly SpriteRenderer _spriteRenderer;
 
@@ -17,6 +17,9 @@ namespace Galcon.Level.Shipping.View
         ///////////////////////////////////////////////////
 
         public void SetColor(Color color)
-            => _spriteRenderer.color = color;
+        {
+            if (_spriteRenderer)
+                _spriteRenderer.color = color;
+        }
     }
 }

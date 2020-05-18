@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Population.Model
 {
-    struct PopulationModel : IPopulationModel
+    public struct  PopulationModel : IPopulationModel
     {
         private int _count;
         private Action<int> _onChanged;

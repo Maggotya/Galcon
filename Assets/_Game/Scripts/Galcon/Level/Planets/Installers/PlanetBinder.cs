@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Galcon.Level.Planets.Installers
 {
-    class PlanetBinder : MonoInstaller<PlanetBinder>
+    public class PlanetBinder : MonoInstaller<PlanetBinder>
     {
         [SerializeField] private PlanetOwner _PlanetOwner;
         [SerializeField] private AutoHiderPopulationView _PopulationHider;

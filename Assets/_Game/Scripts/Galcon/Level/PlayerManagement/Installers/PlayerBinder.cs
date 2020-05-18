@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Galcon.Level.PlayerManagement.Installers
 {
-    class PlayerBinder : MonoBehaviour
+    public class PlayerBinder : MonoBehaviour
     {
         [Inject]
         public void Construct(IPlayer player, IInputManager inputManager, ISelectionManager selectionManager)

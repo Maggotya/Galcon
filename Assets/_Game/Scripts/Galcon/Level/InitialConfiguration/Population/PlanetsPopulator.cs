@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.InitialConfiguration.Population
 {
-    class PlanetsPopulator : IPlanetsPopulator
+    public class PlanetsPopulator : IPlanetsPopulator
     {
         private readonly int _initialPopulation;
 

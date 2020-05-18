@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.PlayerManagement.Ownership.Hider
 {
-    class AutoHiderPopulationView : MonoBehaviour
+    public class AutoHiderPopulationView : MonoBehaviour
     {
         public string[] owners { get; private set; } = new string[0];
 

@@ -9,7 +9,7 @@ using Zenject;
 
 namespace Galcon.Level.Planets.Installers
 {
-    class PlanetsManagerInstaller : MonoInstaller<PlanetsManagerInstaller>
+    public class PlanetsManagerInstaller : MonoInstaller<PlanetsManagerInstaller>
     {
         [Inject(Id = PrefabType.Planet)] private GameObject _prefab { get; set; }
         [Inject] private IPlanetsGeneratorParameters _parameters { get; set; }

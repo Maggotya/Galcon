@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Planets.Model
 {
-    interface IPlanetModel
+    public interface  IPlanetModel
     {
         float radius { get; set; }
         Color color { get; set; }

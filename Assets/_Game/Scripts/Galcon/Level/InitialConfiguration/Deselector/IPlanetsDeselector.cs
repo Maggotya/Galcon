@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.InitialConfiguration.Deselector
 {
-    interface IPlanetsDeselector
+    public interface  IPlanetsDeselector
     {
         void DeselectPlanets(IPlanet[] planets);
     }

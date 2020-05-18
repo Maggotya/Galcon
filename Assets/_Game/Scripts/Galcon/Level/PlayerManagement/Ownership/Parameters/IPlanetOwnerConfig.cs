@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.PlayerManagement.Ownership.Parameters
 {
-    interface IPlanetOwnerConfig
+    public interface  IPlanetOwnerConfig
     {
         string ownerTag { get; }
         Color ownerColor { get; }

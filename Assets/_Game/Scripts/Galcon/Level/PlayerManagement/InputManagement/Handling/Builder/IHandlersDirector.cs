@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.PlayerManagement.InputManagement.Handling.Builder
 {
-    interface IHandlersDirector : IBuildDirector<IInputHandler>
+    public interface  IHandlersDirector : IBuildDirector<IInputHandler>
     {
     }
 }

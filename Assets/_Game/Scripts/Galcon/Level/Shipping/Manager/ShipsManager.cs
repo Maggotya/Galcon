@@ -8,7 +8,7 @@ using Zenject;
 
 namespace Galcon.Level.Shipping.Manager
 {
-    class ShipsManager : MyMonoBehaviour, IShipsManager
+    public class ShipsManager : MyMonoBehaviour, IShipsManager
     {
         private IShipsGenerator _generator;
 

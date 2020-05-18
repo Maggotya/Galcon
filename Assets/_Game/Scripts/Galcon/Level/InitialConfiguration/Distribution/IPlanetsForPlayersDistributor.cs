@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.InitialConfiguration.Distribution
 {
-    interface IPlanetsForPlayersDistributor
+    public interface  IPlanetsForPlayersDistributor
     {
         void Distribute(IPlanet[] planets);
     }

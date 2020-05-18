@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.PlayerManagement
 {
-    interface IPlayer
+    public interface  IPlayer
     {
         void TrySelectPlanet(IPlanet planet);
         void TryDeselectPlanet(IPlanet planet);

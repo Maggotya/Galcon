@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 namespace Galcon.Level
 {
-    class NavMeshRebaker : MyMonoBehaviour
+    public class NavMeshRebaker : MyMonoBehaviour
     {
         [ContextMenu("Rebake")]
         public void Rebake()

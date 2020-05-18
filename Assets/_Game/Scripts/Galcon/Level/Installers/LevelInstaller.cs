@@ -10,7 +10,7 @@ using Zenject;
 
 namespace Galcon.Level.Installers
 {
-    class LevelInstaller : MonoInstaller<LevelInstaller>
+    public class LevelInstaller : MonoInstaller<LevelInstaller>
     {
         [Inject] private ILevelParameters _parameters;
 

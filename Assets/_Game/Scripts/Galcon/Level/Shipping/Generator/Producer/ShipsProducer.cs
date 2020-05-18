@@ -3,7 +3,7 @@ using Galcon.Level.Shipping.Generator.Pool;
 
 namespace Galcon.Level.Shipping.Generator.Producer
 {
-    class ShipsProducer : IShipsProducer
+    public class ShipsProducer : IShipsProducer
     {
         private readonly IShipsPool _pool;
 

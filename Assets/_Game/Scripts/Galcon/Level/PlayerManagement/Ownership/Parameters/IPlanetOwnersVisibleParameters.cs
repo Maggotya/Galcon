@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level.PlayerManagement.Ownership.Parameters
 {
-    interface IPlanetOwnersVisibleParameters
+    public interface  IPlanetOwnersVisibleParameters
     {
         string[] visibleFor { get; }
     }

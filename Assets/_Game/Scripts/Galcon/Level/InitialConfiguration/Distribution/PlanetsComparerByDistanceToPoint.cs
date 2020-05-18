@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Galcon.Level.InitialConfiguration.Distribution
 {
-    class PlanetsComparerByDistanceToPoint : IComparer<IPlanet>
+    public class PlanetsComparerByDistanceToPoint : IComparer<IPlanet>
     {
         private readonly Vector2 _point;
 

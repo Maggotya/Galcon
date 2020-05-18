@@ -10,7 +10,7 @@ using Zenject;
 namespace Galcon.Level.Installers
 {
     [CreateAssetMenu(fileName = "ParametersInstaller", menuName = "Installers/Parameters")]
-    class ParametersInstaller : ScriptableObjectInstaller<ParametersInstaller>
+    public class ParametersInstaller : ScriptableObjectInstaller<ParametersInstaller>
     {
         [SerializeField] private LevelParameters _Level;
         [SerializeField] private InputParameters _Input;

@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Galcon.Level.PlayerManagement.InputManagement.Handling
 {
-    class MouseInputHandler : InputHandler
+    public class MouseInputHandler : InputHandler
     {
         protected override bool _canHandle => true;
 

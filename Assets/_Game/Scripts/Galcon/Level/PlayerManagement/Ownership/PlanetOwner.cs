@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Galcon.Level.PlayerManagement.Ownership
 {
-    class PlanetOwner : ValueStateCheckableMonoBehaviour, IPlanetOwner
+    public class PlanetOwner : ValueStateCheckableMonoBehaviour, IPlanetOwner
     {
         [SerializeField] private string _OwnerTag;
         [Header("Events")]

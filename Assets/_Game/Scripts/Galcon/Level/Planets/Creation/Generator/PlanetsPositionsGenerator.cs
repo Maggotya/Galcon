@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Planets.Creation.Generator
 {
-    class PlanetsPositionsGenerator : IPlanetsPositionsGenerator
+    public class PlanetsPositionsGenerator : IPlanetsPositionsGenerator
     {
         private readonly IBorderedArea _borderedArea;
         private readonly float _minDistanceBetweenPlanetsBorders;

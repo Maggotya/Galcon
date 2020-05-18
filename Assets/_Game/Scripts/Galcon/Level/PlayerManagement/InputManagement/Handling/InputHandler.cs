@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Galcon.Level.PlayerManagement.InputManagement.Handling
 {
-    abstract class InputHandler : IInputHandler
+    abstract public class InputHandler : IInputHandler
     {
         private IInputHandler _successor { get; set; }
 

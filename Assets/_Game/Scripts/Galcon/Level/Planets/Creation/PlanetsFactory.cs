@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Planets.Creation
 {
-    class PlanetsFactory : PlaceholderFactory<IPlanet>, IPlanetsFactory
+    public class PlanetsFactory : PlaceholderFactory<IPlanet>, IPlanetsFactory
     {
 
     }

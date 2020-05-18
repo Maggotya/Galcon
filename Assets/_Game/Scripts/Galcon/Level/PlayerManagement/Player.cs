@@ -12,7 +12,7 @@ namespace Galcon.Level.PlayerManagement
 {
     [RequireComponent(typeof(IPlanetOwner))]
     [RequireComponent(typeof(PlayerBinder))]
-    class Player : MyMonoBehaviour, IPlayer
+    public class Player : MyMonoBehaviour, IPlayer
     {
         private IPlanetOwner _owner { get; set; }
         private SelectedPlanets _selectedPlanets { get; set; }

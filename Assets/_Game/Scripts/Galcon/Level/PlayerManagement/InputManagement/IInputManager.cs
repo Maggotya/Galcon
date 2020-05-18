@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.PlayerManagement.InputManagement
 {
-    interface IInputManager
+    public interface  IInputManager
     {
         Vector2UnityEvent onInputBegan { get; set; }
         Vector2UnityEvent onInputMoved { get; set; }

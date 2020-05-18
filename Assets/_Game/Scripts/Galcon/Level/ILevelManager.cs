@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level
 {
-    interface ILevelManager
+    public interface  ILevelManager
     {
         void StartLevel();
         void ClearLevel();

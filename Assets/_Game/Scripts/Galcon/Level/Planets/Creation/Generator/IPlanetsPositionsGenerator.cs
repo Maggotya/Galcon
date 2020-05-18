@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Planets.Creation.Generator
 {
-    interface IPlanetsPositionsGenerator
+    public interface  IPlanetsPositionsGenerator
     {
         float lastMinDistanceToScreenBorders { get; }
         float lastMinDistanceToPlanetsBorders { get; }

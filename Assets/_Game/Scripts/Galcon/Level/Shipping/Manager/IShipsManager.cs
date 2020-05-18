@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Shipping.Manager
 {
-    interface IShipsManager
+    public interface  IShipsManager
     {
         IShip[] CreateShips(string ownerTag, Color color, int populationForShips);
         void LaunchShips(IShip[] ships, IPlanet targetPlanet);

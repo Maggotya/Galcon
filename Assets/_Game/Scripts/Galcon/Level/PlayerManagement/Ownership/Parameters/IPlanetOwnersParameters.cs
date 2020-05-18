@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level.PlayerManagement.Ownership.Parameters
 {
-    interface IPlanetOwnersParameters
+    public interface  IPlanetOwnersParameters
     {
         IPlanetOwnerConfig[] owners { get; }
 

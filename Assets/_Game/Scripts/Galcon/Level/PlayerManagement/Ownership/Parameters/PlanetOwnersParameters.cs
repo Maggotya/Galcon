@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Galcon.Level.PlayerManagement.Ownership.Parameters
 {
     [CreateAssetMenu(fileName = "PlanetOwnersParameters", menuName = "Parameters/PlanetOwners")]
-    class PlanetOwnersParameters : ScriptableObject, IPlanetOwnersParameters
+    public class PlanetOwnersParameters : ScriptableObject, IPlanetOwnersParameters
     {
         [SerializeField] private PlanetOwnerConfig[] _Owners;
 

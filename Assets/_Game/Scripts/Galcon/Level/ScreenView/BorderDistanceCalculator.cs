@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Galcon.Level.ScreenView
 {
-    class BorderDistanceCalculator : IBorderDistanceCalculator
+    public class BorderDistanceCalculator : IBorderDistanceCalculator
     {
         public IBorder border { get; private set; }
 

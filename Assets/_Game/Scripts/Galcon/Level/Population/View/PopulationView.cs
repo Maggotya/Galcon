@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Population.View
 {
-    class PopulationView : ComponentView, IPopulationView
+    public class PopulationView : ComponentView, IPopulationView
     {
         private readonly UniversalText _textComponent;
 

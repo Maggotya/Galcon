@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.ScreenView
 {
-    interface IBorderDistanceCalculator
+    public interface  IBorderDistanceCalculator
     {
         float Calculate(Vector2 point);
     }

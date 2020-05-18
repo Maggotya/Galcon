@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Population.View
 {
-    interface IPopulationView
+    public interface  IPopulationView
     {
         void UpdateView(int population);
 

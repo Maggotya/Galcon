@@ -7,7 +7,7 @@ using Zenject;
 
 namespace Galcon.Level.PlayerManagement.SelectionManagement
 {
-    class SelectionManager : MyMonoBehaviour, ISelectionManager
+    public class SelectionManager : MyMonoBehaviour, ISelectionManager
     {
         [SerializeField] private IPlanetUnityEvent _OnPlanetClicked;
         [SerializeField] private IPlanetUnityEvent _OnPlanetSelected;

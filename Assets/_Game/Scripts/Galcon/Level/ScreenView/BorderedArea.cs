@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Galcon.Level.ScreenView
 {
-    class BorderedArea : MyMonoBehaviour, IBorderedArea
+    public class BorderedArea : MyMonoBehaviour, IBorderedArea
     {
         public IBorder left { get; private set; }
         public IBorder right { get; private set; }

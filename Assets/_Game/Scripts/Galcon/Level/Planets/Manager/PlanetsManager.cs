@@ -7,7 +7,7 @@ using Zenject;
 
 namespace Galcon.Level.Planets.Manager
 {
-    class PlanetsManager : MyMonoBehaviour, IPlanetsManager
+    public class PlanetsManager : MyMonoBehaviour, IPlanetsManager
     {
         private IPlanetsGenerator _generator { get; set; }
         public IPlanet[] planets { get; private set; }

@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level.PlayerManagement.InputManagement.Handling.Builder
 {
-    class HandlersBuilder : IHandlersBuilder
+    public class HandlersBuilder : IHandlersBuilder
     {
         private IInputHandler _handler { get; set; }
 

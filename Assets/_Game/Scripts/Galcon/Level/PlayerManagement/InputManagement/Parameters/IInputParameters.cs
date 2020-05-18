@@ -1,6 +1,6 @@
 ﻿namespace Galcon.Level.PlayerManagement.InputManagement.Parameters
 {
-    interface IInputParameters
+    public interface  IInputParameters
     {
         bool touch { get; }
         bool mouse { get; }

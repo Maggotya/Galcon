@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 namespace Galcon.Level.Shipping.Moving
 {
-    class NavMeshMovingComponent : IMovingComponent
+    public class NavMeshMovingComponent : IMovingComponent
     {
         private readonly MonoBehaviour _host;
         private readonly NavMeshAgent _agent;

@@ -11,7 +11,7 @@ using Zenject;
 namespace Galcon.Level.Shipping
 {
     [RequireComponent(typeof(IPoolObject))]
-    class Ship : MyMonoBehaviour, IShip
+    public class Ship : MyMonoBehaviour, IShip
     {
         private IShipModel _model;
         private IShipView _view;

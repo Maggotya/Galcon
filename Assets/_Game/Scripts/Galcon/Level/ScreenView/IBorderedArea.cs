@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Galcon.Level.ScreenView
 {
-    interface IBorderedArea
+    public interface  IBorderedArea
     {
         IBorder left { get; }
         IBorder right { get; }

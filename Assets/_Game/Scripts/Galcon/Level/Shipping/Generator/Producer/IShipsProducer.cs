@@ -1,7 +1,7 @@
 ﻿
 namespace Galcon.Level.Shipping.Generator.Producer
 {
-    interface IShipsProducer
+    public interface  IShipsProducer
     {
         bool TryProduce(out IShip ship);
         IShip Produce();

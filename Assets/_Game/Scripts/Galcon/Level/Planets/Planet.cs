@@ -16,11 +16,11 @@ namespace Galcon.Level.Planets
 {
     [RequireComponent(typeof(PlanetOwner))]
     [RequireComponent(typeof(SelectableObject))]
-    class Planet : MyMonoBehaviour, IPlanet
+    public class Planet : MyMonoBehaviour, IPlanet
     {
         private IPlanetView _view;
         private IPlanetModel _model;
-        private Circle _circle;
+        private Circle _circle = new Circle();
 
         private SelectableObject _selectableObject;
         private IPlanetOwnersParameters _ownersParameters;
@@ -31,7 +31,7 @@ namespace Galcon.Level.Planets
         public Circle circle {
             get {
                 _circle.point = transform.position;
-                _circle.radius = _model.radius;
+                _circle.radius = _model?.radius ?? 0;
                 return _circle;
             }
         }
@@ -45,7 +45,6 @@ namespace Galcon.Level.Planets
             _view = view;
             _model = model;
             _shipsManager = shipsManager;
-            _circle = new Circle();
             _selectableObject = selectableObject;
 
             owner = planetOwner;

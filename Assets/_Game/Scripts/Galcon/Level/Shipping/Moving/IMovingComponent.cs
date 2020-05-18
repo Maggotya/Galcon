@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Galcon.Level.Shipping.Moving
 {
-    interface IMovingComponent
+    public interface  IMovingComponent
     {
         bool moving { get; }
 

@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.InitialConfiguration.Population
 {
-    interface IPlanetsPopulator
+    public interface  IPlanetsPopulator
     {
         void Populate(params IPlanet[] planets);
     }

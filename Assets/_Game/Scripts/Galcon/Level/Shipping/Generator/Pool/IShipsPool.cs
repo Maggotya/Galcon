@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.Shipping.Generator.Pool
 {
-    interface IShipsPool : IMemoryPool<Ship>
+    public interface  IShipsPool : IMemoryPool<Ship>
     {
     }
 }

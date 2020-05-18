@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Galcon.Level.Shipping.Generator
 {
-    class ShipsGenerator : IShipsGenerator
+    public class ShipsGenerator : IShipsGenerator
     {
         private readonly Transform _container;
         private readonly IShipsProducer _producer;

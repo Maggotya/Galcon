@@ -9,7 +9,7 @@ using Zenject;
 
 namespace Galcon.Level.Population
 {
-    class PopulationManager : MyMonoBehaviour, IPopulationManager
+    public class PopulationManager : MyMonoBehaviour, IPopulationManager
     {
         [SerializeField] private UnityEvent _OnPopulationExterminated;
         [SerializeField] private UnityEvent _OnEmergenceOfPopulation;
