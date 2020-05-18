@@ -1,11 +1,16 @@
 # Galcon Test Task
 
 Версия движка: *Unity 2019.3.6f1*.
+
 Используемые доп.пакеты: *Cinemachine*, *NavMesh*, *TextMeshPro*, *Zenject*.
+
 Дополнительные ассеты: *SpriteOutline*.
+
 Стартовая сцена: *Assets/_Game/Scenes/Game.unity*.
 
+
 Далее все пути будут указаны относительно директории *Assets/_Game*.
+
 
 ### Замечания:
 
@@ -17,28 +22,48 @@
 - Все возможные настройки вынесены в папку */Parameters* в виде **ScriptableObject'ов**. Я не успел выполнить все дополнительные пункты и вообще как-то завершить игру, но я успел дать немного вольности в возможности дизайнерам настраивать всякие параметры.
 - Из кастомных редакторов успел сделать на скорую руку один **PropertyDrawer** и один **CustomEditor**. Оба лежат в папочке *Scripts/Editor*.
 
+
 ### Правила именований
+
 **Pascal casing:** Определения классов, структур, интерфейсов, перечислений, значения перечислений, методы, пространства имён, сериализованные поля (в т.ч. SerializeField).
+
 **Camel casing:** Локальные переменные, аргументы методов, поля и свойства.
+
 **Caps:** Константы.
+
 **Префикс _:** Private/Protected поля и свойства.
 
+
 #### Примеры:
+
 [SerializeField] private T _Value;
+
 [SerializeField] public T Value;
+
 private T _value;
+
 protected T _value { get; set; }
+
 internal T value;
+
 public T value { get; }
+
 private const T _VALUE;
+
 internal const T VALUE;
 
+
 public void Method();
+
 private Tout Method(T1 a1, T2 a2, ... );
 
+
 class Example;
+
 interface IExample;
+
 internal enum Example { Example1, Example2, ... }
+
 
 ### Что на сцене
 
@@ -65,6 +90,7 @@ internal enum Example { Example1, Example2, ... }
 ## Применяемые паттерны:
 
 Эти заметки я пишу уже после работы, поэтому могу не вспомнить все реализованные кейсы.
+
 
 - Весь проект использует **IoC/DI принципы**.
 - Все игровые объекты на сцене используют некоторое подобие **MVP** архитектуры. У них есть *Model* и *View*, которые не связаны между собой и общаются только своего *Presenter'а*.
