@@ -8,6 +8,7 @@ namespace Galcon.Level.Planets
 {
     public interface  IPlanet : IGameObjectHost
     {
+        bool isSelected { get; }
         IPlanetOwner owner { get; }
         Circle circle { get; }
 

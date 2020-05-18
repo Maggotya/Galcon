@@ -2,7 +2,7 @@
 
 namespace Core.ScriptableObjects
 {
-    public class FakeSpeedConfigs : ISpeedConfigs
+    public class MockSpeedConfigs : ISpeedConfigs
     {
         public float startSpeed { get; set; }
         public float maxSpeed { get; set; }

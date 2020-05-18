@@ -27,6 +27,7 @@ namespace Galcon.Level.Planets
         private IPopulationManager _populationManager;
         private IShipsManager _shipsManager;
 
+        public bool isSelected => _selectableObject?.selected ?? false;
         public IPlanetOwner owner { get; private set; }
         public Circle circle {
             get {

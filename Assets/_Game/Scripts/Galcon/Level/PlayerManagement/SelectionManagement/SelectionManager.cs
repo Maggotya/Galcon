@@ -62,7 +62,7 @@ namespace Galcon.Level.PlayerManagement.SelectionManagement
                 return;
             }
 
-            var point = new Vector3(screenPoint.x, screenPoint.y, _camera.transform.position.z);
+            var point = new Vector3(screenPoint.x, screenPoint.y, -_camera.transform.position.z);
             var worldPoint = _camera.ScreenToWorldPoint(point);
 
             var planet = _planetsManager.GetPlanetByPosition(worldPoint);

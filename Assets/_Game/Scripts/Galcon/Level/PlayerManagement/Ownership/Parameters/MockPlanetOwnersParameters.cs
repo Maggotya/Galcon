@@ -2,7 +2,7 @@
 
 namespace Galcon.Level.PlayerManagement.Ownership.Parameters
 {
-    public class FakePlanetOwnersParameters : IPlanetOwnersParameters
+    public class MockPlanetOwnersParameters : IPlanetOwnersParameters
     {
         public IPlanetOwnerConfig[] owners { get; set; } = new IPlanetOwnerConfig[0];
 

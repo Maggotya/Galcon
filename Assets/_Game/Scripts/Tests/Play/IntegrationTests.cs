@@ -76,7 +76,7 @@ public class IntegrationTests : ZenjectIntegrationTestFixture
         var shipModel = new ShipModel(5, 0, "");
         var shipView = new ShipView(model);
 
-        var speedConfigs = new FakeSpeedConfigs();
+        var speedConfigs = new MockSpeedConfigs();
         speedConfigs.acceleration = 0;
         speedConfigs.startSpeed = 5;
         speedConfigs.maxSpeed = 15;

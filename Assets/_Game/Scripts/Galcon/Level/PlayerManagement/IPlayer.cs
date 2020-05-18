@@ -1,8 +1,9 @@
-﻿using Galcon.Level.Planets;
+﻿using Core.Interfaces;
+using Galcon.Level.Planets;
 
 namespace Galcon.Level.PlayerManagement
 {
-    public interface  IPlayer
+    public interface  IPlayer : IGameObjectHost
     {
         void TrySelectPlanet(IPlanet planet);
         void TryDeselectPlanet(IPlanet planet);
