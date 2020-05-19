@@ -1,11 +1,15 @@
-﻿using Core.Extensions;
+﻿using Core.Components.UI.Views;
+using Core.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Core.Components.UI
+namespace Core.Components.UI.Screens
 {
+    [RequireComponent(typeof(CanvasGroup))]
     public class ScreenController : ValueStateCheckableMonoBehaviour, IScreen
     {
+        #region SERIALIZE_FIELDS
+
         [Header("Settings")]
         [SerializeField] private ScreenType _Type;
         [SerializeField] private bool _CountedAsFirst = true;
@@ -18,9 +22,28 @@ namespace Core.Components.UI
         [SerializeField] private UnityEvent _OnOpened;
         [SerializeField] private UnityEvent _OnClosed;
 
+        #endregion // SERIALIZE_FIELDS
+
+        #region PRIVATE_FIELDS
+
+        private IView _view_Cache;
+        private IView _view {
+            get {
+                if (_view_Cache == null) {
+                    _view_Cache = new ViewByDoTween(GetComponent<CanvasGroup>());
+                    _view_Cache.onPlayOpenStarted += () => gameObject.SetActive(true);
+                    _view_Cache.onPlayCloseFinished += () => gameObject.SetActive(false);
+                }
+                return _view_Cache;
+            }
+        }
+
         private bool _lastState { get; set; }
         protected override string _source => $"{_Type:F}_Screen";
 
+        #endregion // PRIVATE_FIELDS
+
+        #region PUBLIC_FIELDS
         public ScreenType type => _Type;
         public bool countedAsFirst => _CountedAsFirst;
         public bool countedAsLast => _CountedAsLast;
@@ -34,6 +57,9 @@ namespace Core.Components.UI
             get => _OnClosed;
             set => _OnClosed = value;
         }
+
+        #endregion // PUBLIC_FIELDS
+
         /////////////////////////////////////////////////
 
         #region STATE_CHECKING
@@ -44,6 +70,8 @@ namespace Core.Components.UI
 
         /////////////////////////////////////////////////
 
+        #region PUBLIC_METHODS
+
         [ContextMenu("Open")]
         public void Open()
             => SetOpened(true);
@@ -52,8 +80,9 @@ namespace Core.Components.UI
         public void Close() 
             => SetOpened(false);
 
-        /////////////////////////////////////////////////
+        #endregion // PUBLIC_METHODS
 
+        #region PRIVATE_METHODS
         private void SetOpened(bool status)
         {
             if (_lastState == status)
@@ -61,12 +90,16 @@ namespace Core.Components.UI
 
             _Opened = status;
             _lastState = status;
-            gameObject.SetActive(status);
 
             if (_Opened) _OnOpened?.Invoke();
             else _OnClosed?.Invoke();
 
+            if (_Opened) _view.PlayOpen();
+            else _view.PlayClose();
+
             Logging.Log(_source, status ? "Opened" : "Closed");
         }
+
+        #endregion // PRIVATE_METHODS
     }
 }

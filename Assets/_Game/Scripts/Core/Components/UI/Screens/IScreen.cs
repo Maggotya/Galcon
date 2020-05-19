@@ -1,7 +1,7 @@
 ﻿using Core.Interfaces;
 using UnityEngine.Events;
 
-namespace Core.Components.UI
+namespace Core.Components.UI.Screens
 {
     public interface IScreen : IGameObjectHost
     {

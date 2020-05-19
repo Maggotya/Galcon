@@ -1,4 +1,4 @@
-﻿using Core;
+﻿using Core.Components.UI.Views;
 using Core.Extensions;
 using UnityEngine;
 
@@ -8,6 +8,18 @@ namespace Core.Components.UI
     public class UIBackground : ValueStateCheckableMonoBehaviour
     {
         [SerializeField] private bool _Visible;
+
+        private IView _view_Cache;
+        private IView _view {
+            get {
+                if (_view_Cache == null) {
+                    _view_Cache = new ViewByDoTween(GetComponent<CanvasGroup>());
+                    _view_Cache.onPlayOpenStarted += () => gameObject.SetActive(true);
+                    _view_Cache.onPlayCloseFinished += () => gameObject.SetActive(false);
+                }
+                return _view_Cache;
+            }
+        }
 
         private bool _lastState { get; set; }
 
@@ -20,6 +32,8 @@ namespace Core.Components.UI
         protected override bool HasStateChanged() => _lastState != _Visible;
         protected override void UpdateState() => SetVisible(_Visible);
         #endregion // STATE_CHECKING
+
+        /////////////////////////////////////////////////
 
         [ContextMenu("Show")]
         public void Show()
@@ -38,7 +52,10 @@ namespace Core.Components.UI
 
             _lastState = status;
             _Visible = status;
-            gameObject.SetActive(status);
+
+            if (status) _view?.PlayOpen();
+            else _view?.PlayClose();
+
             Logging.Log(_source, status ? "Showed" : "Hided");
         }
     }

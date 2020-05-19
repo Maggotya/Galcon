@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7905047837829051924}
-  - component: {fileID: 3660067588895248752}
+  - component: {fileID: 7265876146450775873}
+  - component: {fileID: 6828516867876098877}
   m_Layer: 5
   m_Name: Screen
   m_TagString: Untagged
@@ -36,7 +37,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3660067588895248752
+--- !u!225 &7265876146450775873
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780885219447262788}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &6828516867876098877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,10 +58,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7780885219447262788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f32c25ce8d111e94189f2e609c7d8309, type: 3}
+  m_Script: {fileID: 11500000, guid: f3fa2fbb896a8514abda2e4d3afe3ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Type: 0
+  _CountedAsFirst: 1
+  _CountedAsLast: 1
   _Opened: 0
   _OnOpened:
     m_PersistentCalls:

@@ -1,5 +1,5 @@
 ﻿
-namespace Core.Components.UI
+namespace Core.Components.UI.Screens
 {
     public enum ScreenType
     {
