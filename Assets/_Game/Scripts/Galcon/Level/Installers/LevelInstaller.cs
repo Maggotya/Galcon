@@ -6,18 +6,23 @@ using Galcon.Level.InitialConfiguration.Population;
 using Galcon.Level.Parameters;
 using Galcon.Level.Planets;
 using Galcon.Level.Planets.Manager;
+using UnityEngine;
 using Zenject;
 
 namespace Galcon.Level.Installers
 {
     public class LevelInstaller : MonoInstaller<LevelInstaller>
     {
+        [SerializeField] private NavMeshRebaker _NavMeshRebaker;
+
         [Inject] private ILevelParameters _parameters;
 
         ////////////////////////////////////////////////////////////////
 
         public override void InstallBindings()
         {
+            Container.Bind<NavMeshRebaker>().FromInstance(_NavMeshRebaker).AsSingle();
+
             Container.Bind<IPlanetsManager>().To<PlanetsManager>().FromComponentsInChildren().AsSingle();
             Container.Bind<IPlanetsConfigurator>().FromMethod(CreatePlanetsConfigurator).AsSingle();
 

@@ -5,7 +5,7 @@ namespace Core.Extensions
 {
     public class MyMonoBehaviour : MonoBehaviour
     {
-        protected string _source => GetType().ToString();
+        protected virtual string _source => GetType().ToString();
 
         protected bool Attach<T>(ref T component) where T : class
         {

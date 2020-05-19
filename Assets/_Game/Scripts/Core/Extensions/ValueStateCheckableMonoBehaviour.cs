@@ -4,7 +4,10 @@ namespace Core.Extensions
     public class ValueStateCheckableMonoBehaviour : MyMonoBehaviour
     {
         private void OnEnable()
-            => InitState();
+        {
+            InitState();
+            UpdateState();
+        }
 
         private void Update()
         {

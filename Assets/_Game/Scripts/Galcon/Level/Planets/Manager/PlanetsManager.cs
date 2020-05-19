@@ -11,6 +11,7 @@ namespace Galcon.Level.Planets.Manager
     {
         private IPlanetsGenerator _generator { get; set; }
         public IPlanet[] planets { get; private set; }
+            = new IPlanet[0];
 
         ///////////////////////////////////////
 
