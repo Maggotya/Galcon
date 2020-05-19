@@ -2,7 +2,7 @@
 
 Версия движка: *Unity 2019.3.6f1*.
 
-Используемые доп.пакеты: *Cinemachine*, *NavMesh*, *TextMeshPro*, *Zenject*.
+Используемые доп.пакеты: *Cinemachine*, *NavMesh*, *TextMeshPro*, *Zenject*, *DoTween*.
 
 Дополнительные ассеты: *SpriteOutline*.
 
