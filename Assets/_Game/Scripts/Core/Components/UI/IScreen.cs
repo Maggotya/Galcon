@@ -1,8 +1,9 @@
-﻿using UnityEngine.Events;
+﻿using Core.Interfaces;
+using UnityEngine.Events;
 
 namespace Core.Components.UI
 {
-    public interface IScreen
+    public interface IScreen : IGameObjectHost
     {
         ScreenType type { get; }
         bool countedAsFirst { get; }

@@ -12,7 +12,6 @@ namespace Galcon.Level.PlayerManagement.Installers
             Container.Bind<IPlanetOwner>().To<PlanetOwner>().FromComponentOnRoot().AsSingle();
             Container.Bind<ISelectionManager>().To<SelectionManager>().FromComponentsInChildren().AsSingle();
             Container.Bind<IInputManager>().To<InputManager>().FromComponentInChildren().AsSingle();
-            Container.Bind<IPlayer>().To<Player>().FromComponentOnRoot().AsSingle();
         }
     }
 }

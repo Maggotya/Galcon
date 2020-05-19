@@ -3,6 +3,7 @@ using Core.Components.UI;
 using Core.Extensions;
 using Core.Modules;
 using Galcon.Level;
+using Galcon.UI;
 using UnityEngine;
 using Zenject;
 
@@ -21,9 +22,11 @@ namespace Galcon
         [Inject]
         public void Construct(ILevelManager levelManager, IUIManager uiManager, ITimeScaleManager timeScaler)
         {
-            _levelManager = levelManager;
-            _timeScaler = timeScaler;
             _uiManager = uiManager;
+            _timeScaler = timeScaler;
+
+            _levelManager = levelManager;
+            _levelManager.onLevelFinished.AddListener(FinishGame);
         }
 
         ///////////////////////////////////////////////////
@@ -37,6 +40,7 @@ namespace Galcon
         public void StartGame()
         {
             _levelManager?.StartLevel();
+            _timeScaler?.EnableScale(true);
             _uiManager?.Open(ScreenType.Game);
         }
 
@@ -73,6 +77,17 @@ namespace Galcon
             else _uiManager?.Open(ScreenType.Game);
 
             Logging.Log(_source, status ? "Paused" : "Unpaused");
+        }
+
+        private void FinishGame()
+        {
+            _timeScaler?.EnableScale(false);
+
+            _uiManager.Open(ScreenType.Result)?
+                .gameObject.GetComponent<ResultScreen>()?
+                .SetStatus(_levelManager?.status ?? "");
+
+            Logging.Log(_source, "Finished");
         }
     }
 }

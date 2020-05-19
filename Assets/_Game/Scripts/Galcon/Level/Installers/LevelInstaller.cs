@@ -1,4 +1,5 @@
 ﻿using Core.Modules.ConvexHull;
+using Galcon.Level.Finishing;
 using Galcon.Level.InitialConfiguration;
 using Galcon.Level.InitialConfiguration.Deselector;
 using Galcon.Level.InitialConfiguration.Distribution;
@@ -6,6 +7,7 @@ using Galcon.Level.InitialConfiguration.Population;
 using Galcon.Level.Parameters;
 using Galcon.Level.Planets;
 using Galcon.Level.Planets.Manager;
+using Galcon.Level.PlayerManagement;
 using UnityEngine;
 using Zenject;
 
@@ -14,6 +16,7 @@ namespace Galcon.Level.Installers
     public class LevelInstaller : MonoInstaller<LevelInstaller>
     {
         [SerializeField] private NavMeshRebaker _NavMeshRebaker;
+        [SerializeField] private Player _Player;
 
         [Inject] private ILevelParameters _parameters;
 
@@ -21,7 +24,9 @@ namespace Galcon.Level.Installers
 
         public override void InstallBindings()
         {
+            Container.Bind<IPlayer>().To<Player>().FromInstance(_Player).AsSingle();
             Container.Bind<NavMeshRebaker>().FromInstance(_NavMeshRebaker).AsSingle();
+            Container.Bind<ILevelFinishedManager>().To<LevelFinishedManager>().AsSingle();
 
             Container.Bind<IPlanetsManager>().To<PlanetsManager>().FromComponentsInChildren().AsSingle();
             Container.Bind<IPlanetsConfigurator>().FromMethod(CreatePlanetsConfigurator).AsSingle();

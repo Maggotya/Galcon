@@ -75,8 +75,13 @@ namespace Core.Components.UI
 
         //////////////////////////////////////////////////////
 
-        public void Open(ScreenType screenType)
-            => GetScreen(screenType)?.Open();
+        public IScreen Open(ScreenType screenType)
+        {
+            var screen = GetScreen(screenType);
+            screen?.Open();
+
+            return screen;
+        }
 
         [ContextMenu("Close All")]
         public void CloseAll()

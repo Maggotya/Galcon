@@ -9,7 +9,7 @@ namespace Core.Components.UI
         UnityEvent onScreenOpened { get; set; }
         UnityEvent onScreenClosed { get; set; }
 
-        void Open(ScreenType screenType);
+        IScreen Open(ScreenType screenType);
         void CloseAll();
     }
 }

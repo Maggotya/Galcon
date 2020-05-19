@@ -263,6 +263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c084d0d92701c8a43a9b79302d8acd7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _OnLevelStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _OnLevelFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7673650612606999750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _NavMeshRebaker: {fileID: 5280473332770054466}
+  _Player: {fileID: 7673650612005957375}
 --- !u!114 &7673650612606999748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +392,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 881765013362983309}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7673650612005957375 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7368698268379557746, guid: 32d7353ee82d9e34e93ea3c67cf53417,
+    type: 3}
+  m_PrefabInstance: {fileID: 881765013362983309}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7214409b30376e146a62e1107573bbdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6458653459550740116
 PrefabInstance:
   m_ObjectHideFlags: 0

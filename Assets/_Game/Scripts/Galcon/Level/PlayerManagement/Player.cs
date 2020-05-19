@@ -14,15 +14,15 @@ namespace Galcon.Level.PlayerManagement
     [RequireComponent(typeof(PlayerBinder))]
     public class Player : MyMonoBehaviour, IPlayer
     {
-        private IPlanetOwner _owner { get; set; }
         private SelectedPlanets _selectedPlanets { get; set; }
+        public IPlanetOwner owner { get; private set; }
 
         //////////////////////////////////////////////////////////////
-        
+
         [Inject]
         public void Construct(IPlanetOwner owner)
         {
-            _owner = owner;
+            this.owner = owner;
             _selectedPlanets = CreateSelectedPlanets();
 
 
@@ -106,6 +106,6 @@ namespace Galcon.Level.PlayerManagement
         //////////////////////////////////////////////////////////////
 
         private bool CanHandlePlanet(IPlanet planet)
-            => planet != null && planet.owner.IsOwner(_owner.ownerTag);
+            => planet != null && planet.owner.IsOwner(owner.ownerTag);
     }
 }
