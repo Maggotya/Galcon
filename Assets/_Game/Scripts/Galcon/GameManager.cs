@@ -1,5 +1,6 @@
 ﻿using Core;
 using Core.Components.UI;
+using Core.Components.UI.Screens;
 using Core.Extensions;
 using Core.Modules;
 using Galcon.Level;
@@ -39,6 +40,7 @@ namespace Galcon
         [ContextMenu("Start Game")]
         public void StartGame()
         {
+            paused = false;
             _levelManager?.StartLevel();
             _timeScaler?.EnableScale(true);
             _uiManager?.Open(ScreenType.Game);
