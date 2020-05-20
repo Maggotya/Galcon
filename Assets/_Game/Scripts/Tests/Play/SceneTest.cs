@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Linq;
+using Galcon;
 using Galcon.Level;
 using Galcon.Level.Planets;
 using Galcon.Level.Planets.Creation.Parameters;
@@ -17,6 +18,7 @@ namespace Tests
     public class SceneTest : SceneTestFixture
     {
         private Camera _camera;
+        private GameManager _gameManager;
         private ILevelManager _levelManager;
         private IPlayer _player;
         private IPlanetOwner _planetOwner;
@@ -28,11 +30,15 @@ namespace Tests
             yield return LoadScene("Game");
 
             _camera = Camera.main;
+
+            _gameManager = SceneContainer.Resolve<GameManager>();
             _levelManager = SceneContainer.Resolve<ILevelManager>();
             _player = _levelManager?.gameObject?.GetComponentInChildren<IPlayer>();
             _planetOwner = _player?.gameObject?.GetComponent<IPlanetOwner>();
             _selectionManager = _player?.gameObject?.GetComponentInChildren<ISelectionManager>();
             _planetManager = _levelManager?.gameObject?.GetComponentInChildren<IPlanetsManager>();
+
+            _gameManager.StartGame();
         }
 
         ////////////////////////////////////////////////

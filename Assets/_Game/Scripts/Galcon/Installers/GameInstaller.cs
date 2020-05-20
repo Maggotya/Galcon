@@ -23,6 +23,8 @@ namespace Galcon.Installers
             Container.Bind<IBorderedArea>().FromInstance(_BorderedArea).AsSingle();
             Container.Bind<ITimeScaleManager>().To<TimeScaleManager>().AsTransient();
             Container.Bind<ILevelManager>().To<LevelManager>().FromInstance(_LevelManager).AsSingle();
+
+            Container.Bind<GameManager>().FromInstance(gameObject.GetComponent<GameManager>()).AsSingle();
         }
     }
 }
